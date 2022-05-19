@@ -1,0 +1,46 @@
+data_root_dir            : /home/data/FFHQ_1024
+batch_size               : 8
+n_workers                : 1
+n_iters                  : 800000
+size                     : 1024
+style_dim                : 512
+n_mlp                    : 8
+channel_multiplier       : 2
+reg_every_G              : 4
+reg_every_D              : 16
+lr                       : 0.002
+augment_p                : 0
+augment                  : False
+ada_target               : 0.6
+mixing                   : 0.9
+n_samples                : 16
+path_batch_shrink        : 2
+w_path_regularize        : 2
+r1                       : 10
+cp_path                  : None
+save_root_dir            : /media/data1/jeonghokim/GANs/StyleGAN2/save/20220206_train
+log_save_iter_freq       : 100
+img_save_iter_freq       : 1000
+model_save_iter_freq     : 1000
+local_rank               : 0
+world_size               : 4
+use_wandb                : True
+wandb_name               : wandb name test
+wandb_notes              : wandb notes test
+DDP_backend              : nccl
+logger_path              : /media/data1/jeonghokim/GANs/StyleGAN2/save/20220206_train/logger.txt
+save_img_dir             : /media/data1/jeonghokim/GANs/StyleGAN2/save/20220206_train/save_images
+save_model_dir           : /media/data1/jeonghokim/GANs/StyleGAN2/save/20220206_train/save_models
+# imgs : 70000
+Traceback (most recent call last):
+  File "train.py", line 114, in <module>
+    train(args, logger)
+  File "train.py", line 71, in train
+    model.train(iter)
+  File "/home/jeonghokim/GANs/StyleGAN2/models/stylegan2_model.py", line 142, in train
+    prob=self.args.mixing
+  File "/home/jeonghokim/GANs/StyleGAN2/models/stylegan2_model.py", line 192, in mixing_noise
+    if prob > 0 and random.random() < prob: return self.make_noise(bs, style_dim, 2)
+  File "/home/jeonghokim/GANs/StyleGAN2/models/stylegan2_model.py", line 190, in make_noise
+    else: return torch.randn(n_noise, bs, style_dim).cuda(self.args.local_rank).unbind(0)
+KeyboardInterrupt

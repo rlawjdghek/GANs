@@ -1,0 +1,1 @@
+{"Loss G": 3.6710753440856934, "Loss D": 0.5530816316604614, "Real Loss D": 0.2894393503665924, "Gene Loss D": 0.263642281293869, "Augment": 0.0, "Rt": 0, "R1": 0.0004349952796474099, "Path Length Regularization": 0.0019957737531512976, "Mean Path Length": 0.053384583443403244, "Path Length": 0.08637217432260513, "_runtime": 2148, "_timestamp": 1644132958, "_step": 8}

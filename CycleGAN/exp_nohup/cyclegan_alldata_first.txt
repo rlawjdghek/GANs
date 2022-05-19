@@ -1,0 +1,217 @@
+nohup: ignoring input
+/home/jeonghokim/anaconda3/envs/CECT/lib/python3.8/site-packages/torch/distributed/launch.py:178: FutureWarning: The module torch.distributed.launch is deprecated
+and will be removed in future. Use torch.distributed.run.
+Note that --use_env is set by default in torch.distributed.run.
+If your script expects `--local_rank` argument to be set, please
+change it to read from `os.environ['LOCAL_RANK']` instead. See 
+https://pytorch.org/docs/stable/distributed.html#launch-utility for 
+further instructions
+
+  warnings.warn(
+WARNING:torch.distributed.run:*****************************************
+Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+*****************************************
+data_root_dir            : /home/data/CECTGAN/
+data_name                : CECT_all
+val_ratio                : 0.2
+input_nc                 : 3
+output_nc                : 3
+resize                   : True
+crop                     : True
+size                     : 286
+crop_size                : 256
+flip                     : True
+input_ch                 : 3
+output_ch                : 3
+pool_size                : 50
+batch_size               : 128
+num_workers              : 16
+lr_scheduler             : linear
+start_epoch              : 1
+n_epochs                 : 100
+linearlr_epochs          : 50
+steplr_step              : 50
+gan_loss_name            : lsgan
+target_real_label        : 1.0
+target_gene_label        : 0.0
+G_lr                     : 0.0002
+D_lr                     : 0.0002
+G_betas                  : (0.5, 0.999)
+D_betas                  : (0.5, 0.999)
+lambda_ID                : 0.5
+lambda_A                 : 10.0
+lambda_B                 : 10.0
+valid_epoch_freq         : 20
+G_AB_name                : unet_256
+G_BA_name                : unet_256
+D_A_name                 : basic
+D_B_name                 : basic
+ngf                      : 64
+ndf                      : 64
+G_norm_type              : instance
+D_norm_type              : instance
+G_init_type              : normal
+D_init_type              : normal
+G_init_gain              : 0.02
+D_init_gain              : 0.02
+D_n_layers               : 3
+G_use_dropout            : False
+save_root_dir            : /home/jeonghokim/CECT/save/cyclegan
+save_name                : [G_AB-unet_256]_[G_BA-unet_256]_[D_A-basic]_[D_B-basic]
+img_save_iter_freq       : 1000
+model_save_iter_freq     : 1000
+n_save_images            : 8
+msssim_epoch_freq        : 9999999
+local_rank               : 0
+world_size               : 4
+DP                       : False
+DDP                      : True
+dist_backend             : nccl
+use_wandb                : True
+save_dir                 : /home/jeonghokim/CECT/save/cyclegan/all_data_first
+img_save_dir             : /home/jeonghokim/CECT/save/cyclegan/all_data_first/save_images
+model_save_dir           : /home/jeonghokim/CECT/save/cyclegan/all_data_first/save_models
+logger_path              : /home/jeonghokim/CECT/save/cyclegan/all_data_first/log.txt
+wandb_name               : [G_AB-unet_256]_[G_BA-unet_256]_[D_A-basic]_[D_B-basic]
+wandb_notes              : [G_AB-unet_256]_[G_BA-unet_256]_[D_A-basic]_[D_B-basic]
+wandb: Currently logged in as: jeonghokim (use `wandb login --relogin` to force relogin)
+wandb: Tracking run with wandb version 0.12.9
+wandb: Syncing run [G_AB-unet_256]_[G_BA-unet_256]_[D_A-basic]_[D_B-basic]
+wandb:  View project at https://wandb.ai/jeonghokim/CECT%20CycleGAN
+wandb:  View run at https://wandb.ai/jeonghokim/CECT%20CycleGAN/runs/2ydqa9ar
+wandb: Run data is saved locally in /home/jeonghokim/CECT/src/cyclegan/wandb/run-20211220_121029-2ydqa9ar
+wandb: Run `wandb offline` to turn off syncing.
+
+[train] # ncct: 32876, # cect: 32876
+/home/jeonghokim/anaconda3/envs/CECT/lib/python3.8/site-packages/torchvision/transforms/transforms.py:310: UserWarning: The use of the transforms.Scale transform is deprecated, please use transforms.Resize instead.
+  warnings.warn("The use of the transforms.Scale transform is deprecated, " +
+/home/jeonghokim/anaconda3/envs/CECT/lib/python3.8/site-packages/torchvision/transforms/transforms.py:310: UserWarning: The use of the transforms.Scale transform is deprecated, please use transforms.Resize instead.
+  warnings.warn("The use of the transforms.Scale transform is deprecated, " +
+/home/jeonghokim/anaconda3/envs/CECT/lib/python3.8/site-packages/torchvision/transforms/transforms.py:310: UserWarning: The use of the transforms.Scale transform is deprecated, please use transforms.Resize instead.
+  warnings.warn("The use of the transforms.Scale transform is deprecated, " +
+/home/jeonghokim/anaconda3/envs/CECT/lib/python3.8/site-packages/torchvision/transforms/transforms.py:280: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
+  warnings.warn(
+/home/jeonghokim/anaconda3/envs/CECT/lib/python3.8/site-packages/torchvision/transforms/transforms.py:280: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
+  warnings.warn(
+/home/jeonghokim/anaconda3/envs/CECT/lib/python3.8/site-packages/torchvision/transforms/transforms.py:280: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
+  warnings.warn(
+/home/jeonghokim/anaconda3/envs/CECT/lib/python3.8/site-packages/torchvision/transforms/transforms.py:310: UserWarning: The use of the transforms.Scale transform is deprecated, please use transforms.Resize instead.
+  warnings.warn("The use of the transforms.Scale transform is deprecated, " +
+/home/jeonghokim/anaconda3/envs/CECT/lib/python3.8/site-packages/torchvision/transforms/transforms.py:280: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
+  warnings.warn(
+[valid] # ncct: 1710, # cect: 1710
+[Epoch-1] loss G: 16.958595422312413, loss D: 2.6745678512106443
+[Epoch-2] loss G: 4.274435320363484, loss D: 0.5941344845220982
+[Epoch-3] loss G: 3.3988183320098035, loss D: 0.5291121629398661
+[Epoch-4] loss G: 3.1033154770846147, loss D: 0.5312724753385739
+[Epoch-5] loss G: 2.919337165922793, loss D: 0.5415582655554981
+[Epoch-6] loss G: 2.7649123418039614, loss D: 0.5355619168916835
+[Epoch-7] loss G: 2.6385412383854048, loss D: 0.5308192041048184
+[Epoch-8] loss G: 2.5142896812695166, loss D: 0.505682720691564
+[Epoch-9] loss G: 2.3911080945798524, loss D: 0.4904186976102455
+[Epoch-10] loss G: 2.3677133687410725, loss D: 0.5422437188761384
+[Epoch-11] loss G: 2.2596666288137985, loss D: 0.527714364588703
+[Epoch-12] loss G: 2.1396224818709473, loss D: 0.5225282396578647
+[Epoch-13] loss G: 2.031998766412815, loss D: 0.5360435856521413
+[Epoch-14] loss G: 2.0100867708664274, loss D: 0.5413338711320056
+[Epoch-15] loss G: 1.9091817783111347, loss D: 0.5336487215646414
+[Epoch-16] loss G: 1.8735020140949457, loss D: 0.5344401004033333
+[Epoch-17] loss G: 1.8452080978298873, loss D: 0.5271761615950198
+[Epoch-18] loss G: 1.7808048100436107, loss D: 0.5693463798073438
+[Epoch-19] loss G: 1.7030198446139901, loss D: 0.5124839435116568
+[Epoch-20] loss G: 1.7201556896609334, loss D: 0.5350215712491723
+[Epoch-21] loss G: 1.689246970410039, loss D: 0.5539922463384797
+[Epoch-22] loss G: 1.6165930784768265, loss D: 0.519126646549746
+[Epoch-23] loss G: 1.5989199772645761, loss D: 0.5291274865840615
+[Epoch-24] loss G: 1.5830634476886438, loss D: 0.5266245148639955
+[Epoch-25] loss G: 1.6455449384702558, loss D: 0.5386010175465464
+[Epoch-26] loss G: 1.6537244733863103, loss D: 0.5209285425202866
+[Epoch-27] loss G: 1.5228365871038645, loss D: 0.5205527394629261
+[Epoch-28] loss G: 1.4686900376403313, loss D: 0.5345539307707431
+[Epoch-29] loss G: 1.427977889526034, loss D: 0.5177053399642376
+[Epoch-30] loss G: 1.411338765323271, loss D: 0.5240968420479707
+[Epoch-31] loss G: 1.4465949609630921, loss D: 0.526498309240853
+[Epoch-32] loss G: 1.4019588859488255, loss D: 0.5192030472018043
+[Epoch-33] loss G: 1.334411692715051, loss D: 0.5222240034674391
+[Epoch-34] loss G: 1.3794615094948024, loss D: 0.5394337050800763
+[Epoch-35] loss G: 1.4059575784088907, loss D: 0.5276074138765628
+[Epoch-36] loss G: 1.3916673504794248, loss D: 0.4950654494137293
+[Epoch-37] loss G: 1.3454961474757805, loss D: 0.5061102802119039
+[Epoch-38] loss G: 1.2810905575389655, loss D: 0.5141404814232235
+[Epoch-39] loss G: 1.2931613647556317, loss D: 0.5232004718140016
+[Epoch-40] loss G: 1.305743031801135, loss D: 0.5161898720799637
+[Epoch-41] loss G: 1.3351063696713557, loss D: 0.5293114108606504
+[Epoch-42] loss G: 1.2500750488398908, loss D: 0.4966337884889494
+[Epoch-43] loss G: 1.2893649511259537, loss D: 0.53651529528071
+[Epoch-44] loss G: 1.3397143061454895, loss D: 0.5303111506764479
+[Epoch-45] loss G: 1.292444675344956, loss D: 0.490168574996667
+[Epoch-46] loss G: 1.2465434736224448, loss D: 0.5152973083992018
+[Epoch-47] loss G: 1.224401102070101, loss D: 0.5169744307374937
+[Epoch-48] loss G: 1.2461333793363283, loss D: 0.5235784996968578
+[Epoch-49] loss G: 1.2161172492789272, loss D: 0.5143052377627125
+[Epoch-50] loss G: 1.2301878733622764, loss D: 0.5141886950104845
+[Epoch-51] loss G: 1.2245849247526435, loss D: 0.5068934970360949
+[Epoch-52] loss G: 1.2024065420160273, loss D: 0.523360277690045
+[Epoch-53] loss G: 1.198264998869821, loss D: 0.5146325713005186
+[Epoch-54] loss G: 1.1861106805781667, loss D: 0.5124590183126766
+[Epoch-55] loss G: 1.211847126433153, loss D: 0.5115696263945673
+[Epoch-56] loss G: 1.2475147010027194, loss D: 0.5106945667465262
+[Epoch-57] loss G: 1.22745661235723, loss D: 0.5035443449704979
+[Epoch-58] loss G: 1.1864098085076693, loss D: 0.5063802382635336
+[Epoch-59] loss G: 1.1995455891796818, loss D: 0.52147386403382
+[Epoch-60] loss G: 1.1680299490236978, loss D: 0.49983587587295997
+[Epoch-61] loss G: 1.175997146682331, loss D: 0.5208973169674881
+[Epoch-62] loss G: 1.151808476546687, loss D: 0.5097042304318756
+[Epoch-63] loss G: 1.1622364623570678, loss D: 0.5302127095988406
+[Epoch-64] loss G: 1.124687951460185, loss D: 0.5046288338596912
+[Epoch-65] loss G: 1.130879456783127, loss D: 0.5052514272401013
+[Epoch-66] loss G: 1.1250290603790858, loss D: 0.5089124334469113
+[Epoch-67] loss G: 1.1338220019455967, loss D: 0.5110709773267124
+[Epoch-68] loss G: 1.1217980642709757, loss D: 0.5059829733786262
+[Epoch-69] loss G: 1.123718495423493, loss D: 0.5159797314701761
+[Epoch-70] loss G: 1.1236504333009685, loss D: 0.5106817049286287
+[Epoch-71] loss G: 1.1146604208154884, loss D: 0.5076995585968147
+[Epoch-72] loss G: 1.1894583082036652, loss D: 0.5169985886399858
+[Epoch-73] loss G: 1.1300415636080723, loss D: 0.5037060738958745
+[Epoch-74] loss G: 1.1251963181918607, loss D: 0.5229681235245072
+[Epoch-75] loss G: 1.1065384173918298, loss D: 0.5036435763698698
+[Epoch-76] loss G: 1.0931752194800157, loss D: 0.4950332233745957
+[Epoch-77] loss G: 1.0931675958581208, loss D: 0.5085340057546052
+[Epoch-78] loss G: 1.1210189851215975, loss D: 0.5394657926484607
+[Epoch-79] loss G: 1.0707393405152899, loss D: 0.5040530367610605
+[Epoch-80] loss G: 1.0539436541431533, loss D: 0.48988711140657343
+[Epoch-81] loss G: 1.0724127451308032, loss D: 0.5115554004396338
+[Epoch-82] loss G: 1.0765875753498901, loss D: 0.5143524467190885
+[Epoch-83] loss G: 1.0960217419876237, loss D: 0.4918141197673827
+[Epoch-84] loss G: 1.0922597271781984, loss D: 0.5201987296302963
+[Epoch-85] loss G: 1.0657922542795732, loss D: 0.49961295442172743
+[Epoch-86] loss G: 1.0654155725341512, loss D: 0.5076688140764886
+[Epoch-87] loss G: 1.0609935392557754, loss D: 0.5047264295869361
+[Epoch-88] loss G: 1.0518076645804375, loss D: 0.5040317223750554
+[Epoch-89] loss G: 1.0581644052773993, loss D: 0.5106028037424258
+[Epoch-90] loss G: 1.0515329421241, loss D: 0.505234960265832
+[Epoch-91] loss G: 1.0586598063489936, loss D: 0.505315569329253
+[Epoch-92] loss G: 1.082133246499382, loss D: 0.5339028757989719
+[Epoch-93] loss G: 1.0330119069177517, loss D: 0.4941281955859162
+[Epoch-94] loss G: 1.063087313130819, loss D: 0.5005351267369766
+[Epoch-95] loss G: 1.0448109149236664, loss D: 0.49879779093659177
+[Epoch-96] loss G: 1.0489139267382708, loss D: 0.5057732846806817
+[Epoch-97] loss G: 1.043969588857568, loss D: 0.5031657823972102
+[Epoch-98] loss G: 1.0638290805412856, loss D: 0.5190056804787403
+[Epoch-99] loss G: 1.0531072967286557, loss D: 0.488338638873471
+[Epoch-100] loss G: 2.714837333903375, loss D: 1.850682075647473
+
+wandb: Waiting for W&B process to finish, PID 1868... (success).
+wandb: - 0.00MB of 0.00MB uploaded (0.00MB deduped)wandb: \ 0.00MB of 0.00MB uploaded (0.00MB deduped)wandb: | 0.00MB of 0.00MB uploaded (0.00MB deduped)wandb: / 0.00MB of 0.01MB uploaded (0.00MB deduped)wandb: - 0.00MB of 0.02MB uploaded (0.00MB deduped)wandb: \ 0.00MB of 0.02MB uploaded (0.00MB deduped)wandb: | 0.00MB of 0.02MB uploaded (0.00MB deduped)wandb: / 0.02MB of 0.02MB uploaded (0.00MB deduped)wandb: - 0.02MB of 0.02MB uploaded (0.00MB deduped)wandb: \ 0.02MB of 0.02MB uploaded (0.00MB deduped)wandb: | 0.02MB of 0.02MB uploaded (0.00MB deduped)wandb: / 0.02MB of 0.02MB uploaded (0.00MB deduped)wandb: - 0.02MB of 0.02MB uploaded (0.00MB deduped)wandb: \ 0.02MB of 0.02MB uploaded (0.00MB deduped)wandb: | 0.02MB of 0.02MB uploaded (0.00MB deduped)wandb: / 0.02MB of 0.02MB uploaded (0.00MB deduped)wandb: - 0.02MB of 0.02MB uploaded (0.00MB deduped)wandb: \ 0.02MB of 0.02MB uploaded (0.00MB deduped)wandb:                                                                                
+wandb: Run history:
+wandb:   loss D █▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▅
+wandb:   loss G █▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▂
+wandb: 
+wandb: Run summary:
+wandb:   loss D 1.85068
+wandb:   loss G 2.71484
+wandb: 
+wandb: Synced 6 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Synced [G_AB-unet_256]_[G_BA-unet_256]_[D_A-basic]_[D_B-basic]: https://wandb.ai/jeonghokim/CECT%20CycleGAN/runs/2ydqa9ar
+wandb: Find logs at: ./wandb/run-20211220_121029-2ydqa9ar/logs/debug.log
+wandb: 

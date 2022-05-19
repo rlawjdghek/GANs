@@ -1,0 +1,20 @@
+{
+    "os": "Linux-4.15.0-162-generic-x86_64-with-debian-buster-sid",
+    "python": "3.7.11",
+    "heartbeatAt": "2022-02-06T07:00:11.716684",
+    "startedAt": "2022-02-06T07:00:10.703424",
+    "docker": null,
+    "gpu": "A100-PCIE-40GB",
+    "gpu_count": 4,
+    "cpu_count": 104,
+    "cuda": null,
+    "args": [
+        "--local_rank=0"
+    ],
+    "state": "running",
+    "program": "train.py",
+    "codePath": "train.py",
+    "host": "gpuserver3",
+    "username": "jeonghokim",
+    "executable": "/home/jeonghokim/anaconda3/envs/GANs/bin/python"
+}

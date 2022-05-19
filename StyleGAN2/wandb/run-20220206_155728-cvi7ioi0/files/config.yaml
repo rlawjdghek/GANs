@@ -1,0 +1,121 @@
+wandb_version: 1
+
+DDP_backend:
+  desc: null
+  value: nccl
+_wandb:
+  desc: null
+  value:
+    cli_version: 0.12.10
+    framework: torch
+    is_jupyter_run: false
+    is_kaggle_kernel: false
+    python_version: 3.7.11
+    start_time: 1644130648
+    t:
+      1:
+      - 1
+      2:
+      - 1
+      3:
+      - 13
+      4: 3.7.11
+      5: 0.12.10
+      8:
+      - 5
+ada_target:
+  desc: null
+  value: 0.6
+augment:
+  desc: null
+  value: false
+augment_p:
+  desc: null
+  value: 0
+batch_size:
+  desc: null
+  value: 8
+channel_multiplier:
+  desc: null
+  value: 2
+cp_path:
+  desc: null
+  value: null
+data_root_dir:
+  desc: null
+  value: /home/data/FFHQ_1024
+img_save_iter_freq:
+  desc: null
+  value: 1000
+local_rank:
+  desc: null
+  value: 0
+log_save_iter_freq:
+  desc: null
+  value: 100
+logger_path:
+  desc: null
+  value: /media/data1/jeonghokim/GANs/StyleGAN2/save/20220206_train/logger.txt
+lr:
+  desc: null
+  value: 0.002
+mixing:
+  desc: null
+  value: 0.9
+model_save_iter_freq:
+  desc: null
+  value: 1000
+n_iters:
+  desc: null
+  value: 800000
+n_mlp:
+  desc: null
+  value: 8
+n_samples:
+  desc: null
+  value: 16
+n_workers:
+  desc: null
+  value: 1
+path_batch_shrink:
+  desc: null
+  value: 2
+r1:
+  desc: null
+  value: 10
+reg_every_D:
+  desc: null
+  value: 16
+reg_every_G:
+  desc: null
+  value: 4
+save_img_dir:
+  desc: null
+  value: /media/data1/jeonghokim/GANs/StyleGAN2/save/20220206_train/save_images
+save_model_dir:
+  desc: null
+  value: /media/data1/jeonghokim/GANs/StyleGAN2/save/20220206_train/save_models
+save_root_dir:
+  desc: null
+  value: /media/data1/jeonghokim/GANs/StyleGAN2/save/20220206_train
+size:
+  desc: null
+  value: 1024
+style_dim:
+  desc: null
+  value: 512
+use_wandb:
+  desc: null
+  value: true
+w_path_regularize:
+  desc: null
+  value: 2
+wandb_name:
+  desc: null
+  value: wandb name test
+wandb_notes:
+  desc: null
+  value: wandb notes test
+world_size:
+  desc: null
+  value: 4

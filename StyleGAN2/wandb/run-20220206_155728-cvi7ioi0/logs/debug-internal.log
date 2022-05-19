@@ -1,0 +1,262 @@
+2022-02-06 15:57:29,108 INFO    MainThread:74300 [internal.py:wandb_internal():92] W&B internal server running at pid: 74300, started at: 2022-02-06 15:57:29.107820
+2022-02-06 15:57:29,110 DEBUG   HandlerThread:74300 [handler.py:handle_request():131] handle_request: check_version
+2022-02-06 15:57:29,110 INFO    WriterThread:74300 [datastore.py:open_for_write():77] open: /home/jeonghokim/GANs/StyleGAN2/wandb/run-20220206_155728-cvi7ioi0/run-cvi7ioi0.wandb
+2022-02-06 15:57:29,114 DEBUG   SenderThread:74300 [sender.py:send():235] send: header
+2022-02-06 15:57:29,114 DEBUG   SenderThread:74300 [sender.py:send_request():249] send_request: check_version
+2022-02-06 15:57:29,236 DEBUG   SenderThread:74300 [sender.py:send():235] send: run
+2022-02-06 15:57:29,518 INFO    SenderThread:74300 [dir_watcher.py:__init__():169] watching files in: /home/jeonghokim/GANs/StyleGAN2/wandb/run-20220206_155728-cvi7ioi0/files
+2022-02-06 15:57:29,519 INFO    SenderThread:74300 [sender.py:_start_run_threads():812] run started: cvi7ioi0 with start time 1644130648
+2022-02-06 15:57:29,519 DEBUG   SenderThread:74300 [sender.py:send():235] send: summary
+2022-02-06 15:57:29,519 INFO    SenderThread:74300 [sender.py:_save_file():944] saving file wandb-summary.json with policy end
+2022-02-06 15:57:29,521 DEBUG   HandlerThread:74300 [handler.py:handle_request():131] handle_request: run_start
+2022-02-06 15:57:29,528 DEBUG   HandlerThread:74300 [meta.py:__init__():36] meta init
+2022-02-06 15:57:29,529 DEBUG   HandlerThread:74300 [meta.py:__init__():50] meta init done
+2022-02-06 15:57:29,529 DEBUG   HandlerThread:74300 [meta.py:probe():210] probe
+2022-02-06 15:57:29,535 DEBUG   HandlerThread:74300 [git.py:repo():33] git repository is invalid
+2022-02-06 15:57:29,536 DEBUG   HandlerThread:74300 [meta.py:_save_pip():54] save pip
+2022-02-06 15:57:29,536 DEBUG   HandlerThread:74300 [meta.py:_save_pip():68] save pip done
+2022-02-06 15:57:29,536 DEBUG   HandlerThread:74300 [meta.py:_save_conda():75] save conda
+2022-02-06 15:57:30,523 INFO    Thread-8  :74300 [dir_watcher.py:_on_file_created():217] file/dir created: /home/jeonghokim/GANs/StyleGAN2/wandb/run-20220206_155728-cvi7ioi0/files/wandb-summary.json
+2022-02-06 15:57:30,523 INFO    Thread-8  :74300 [dir_watcher.py:_on_file_created():217] file/dir created: /home/jeonghokim/GANs/StyleGAN2/wandb/run-20220206_155728-cvi7ioi0/files/requirements.txt
+2022-02-06 15:57:30,524 INFO    Thread-8  :74300 [dir_watcher.py:_on_file_created():217] file/dir created: /home/jeonghokim/GANs/StyleGAN2/wandb/run-20220206_155728-cvi7ioi0/files/conda-environment.yaml
+2022-02-06 15:57:31,006 DEBUG   HandlerThread:74300 [meta.py:_save_conda():85] save conda done
+2022-02-06 15:57:31,006 DEBUG   HandlerThread:74300 [meta.py:probe():248] probe done
+2022-02-06 15:57:31,013 DEBUG   SenderThread:74300 [sender.py:send():235] send: files
+2022-02-06 15:57:31,013 INFO    SenderThread:74300 [sender.py:_save_file():944] saving file wandb-metadata.json with policy now
+2022-02-06 15:57:31,023 DEBUG   HandlerThread:74300 [handler.py:handle_request():131] handle_request: stop_status
+2022-02-06 15:57:31,024 DEBUG   SenderThread:74300 [sender.py:send_request():249] send_request: stop_status
+2022-02-06 15:57:31,225 DEBUG   SenderThread:74300 [sender.py:send():235] send: config
+2022-02-06 15:57:31,524 INFO    Thread-8  :74300 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/jeonghokim/GANs/StyleGAN2/wandb/run-20220206_155728-cvi7ioi0/files/conda-environment.yaml
+2022-02-06 15:57:31,524 INFO    Thread-8  :74300 [dir_watcher.py:_on_file_created():217] file/dir created: /home/jeonghokim/GANs/StyleGAN2/wandb/run-20220206_155728-cvi7ioi0/files/wandb-metadata.json
+2022-02-06 15:57:31,527 INFO    Thread-8  :74300 [dir_watcher.py:_on_file_created():217] file/dir created: /home/jeonghokim/GANs/StyleGAN2/wandb/run-20220206_155728-cvi7ioi0/files/output.log
+2022-02-06 15:57:31,710 INFO    Thread-11 :74300 [upload_job.py:push():137] Uploaded file /tmp/tmpoljus70uwandb/346aug6q-wandb-metadata.json
+2022-02-06 15:57:37,527 INFO    Thread-8  :74300 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/jeonghokim/GANs/StyleGAN2/wandb/run-20220206_155728-cvi7ioi0/files/output.log
+2022-02-06 15:57:40,499 DEBUG   SenderThread:74300 [sender.py:send():235] send: history
+2022-02-06 15:57:40,500 DEBUG   SenderThread:74300 [sender.py:send():235] send: summary
+2022-02-06 15:57:40,504 INFO    SenderThread:74300 [sender.py:_save_file():944] saving file wandb-summary.json with policy end
+2022-02-06 15:57:40,529 INFO    Thread-8  :74300 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/jeonghokim/GANs/StyleGAN2/wandb/run-20220206_155728-cvi7ioi0/files/wandb-summary.json
+2022-02-06 15:57:42,851 DEBUG   SenderThread:74300 [sender.py:send():235] send: history
+2022-02-06 15:57:42,852 DEBUG   SenderThread:74300 [sender.py:send():235] send: summary
+2022-02-06 15:57:42,852 INFO    SenderThread:74300 [sender.py:_save_file():944] saving file wandb-summary.json with policy end
+2022-02-06 15:57:43,530 INFO    Thread-8  :74300 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/jeonghokim/GANs/StyleGAN2/wandb/run-20220206_155728-cvi7ioi0/files/wandb-summary.json
+2022-02-06 15:57:44,536 DEBUG   SenderThread:74300 [sender.py:send():235] send: history
+2022-02-06 15:57:44,537 DEBUG   SenderThread:74300 [sender.py:send():235] send: summary
+2022-02-06 15:57:44,537 INFO    SenderThread:74300 [sender.py:_save_file():944] saving file wandb-summary.json with policy end
+2022-02-06 15:57:45,530 INFO    Thread-8  :74300 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/jeonghokim/GANs/StyleGAN2/wandb/run-20220206_155728-cvi7ioi0/files/wandb-summary.json
+2022-02-06 15:57:46,228 DEBUG   HandlerThread:74300 [handler.py:handle_request():131] handle_request: stop_status
+2022-02-06 15:57:46,229 DEBUG   SenderThread:74300 [sender.py:send_request():249] send_request: stop_status
+2022-02-06 15:57:47,296 DEBUG   SenderThread:74300 [sender.py:send():235] send: history
+2022-02-06 15:57:47,296 DEBUG   SenderThread:74300 [sender.py:send():235] send: summary
+2022-02-06 15:57:47,297 INFO    SenderThread:74300 [sender.py:_save_file():944] saving file wandb-summary.json with policy end
+2022-02-06 15:57:47,531 INFO    Thread-8  :74300 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/jeonghokim/GANs/StyleGAN2/wandb/run-20220206_155728-cvi7ioi0/files/wandb-summary.json
+2022-02-06 15:57:48,982 DEBUG   SenderThread:74300 [sender.py:send():235] send: history
+2022-02-06 15:57:48,983 DEBUG   SenderThread:74300 [sender.py:send():235] send: summary
+2022-02-06 15:57:48,987 INFO    SenderThread:74300 [sender.py:_save_file():944] saving file wandb-summary.json with policy end
+2022-02-06 15:57:49,533 INFO    Thread-8  :74300 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/jeonghokim/GANs/StyleGAN2/wandb/run-20220206_155728-cvi7ioi0/files/wandb-summary.json
+2022-02-06 15:57:50,671 DEBUG   SenderThread:74300 [sender.py:send():235] send: history
+2022-02-06 15:57:50,672 DEBUG   SenderThread:74300 [sender.py:send():235] send: summary
+2022-02-06 15:57:50,673 INFO    SenderThread:74300 [sender.py:_save_file():944] saving file wandb-summary.json with policy end
+2022-02-06 15:57:51,533 INFO    Thread-8  :74300 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/jeonghokim/GANs/StyleGAN2/wandb/run-20220206_155728-cvi7ioi0/files/wandb-summary.json
+2022-02-06 15:57:52,369 DEBUG   SenderThread:74300 [sender.py:send():235] send: history
+2022-02-06 15:57:52,370 DEBUG   SenderThread:74300 [sender.py:send():235] send: summary
+2022-02-06 15:57:52,380 INFO    SenderThread:74300 [sender.py:_save_file():944] saving file wandb-summary.json with policy end
+2022-02-06 15:57:52,534 INFO    Thread-8  :74300 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/jeonghokim/GANs/StyleGAN2/wandb/run-20220206_155728-cvi7ioi0/files/wandb-summary.json
+2022-02-06 15:57:54,699 DEBUG   SenderThread:74300 [sender.py:send():235] send: history
+2022-02-06 15:57:54,699 DEBUG   SenderThread:74300 [sender.py:send():235] send: summary
+2022-02-06 15:57:54,700 INFO    SenderThread:74300 [sender.py:_save_file():944] saving file wandb-summary.json with policy end
+2022-02-06 15:57:55,536 INFO    Thread-8  :74300 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/jeonghokim/GANs/StyleGAN2/wandb/run-20220206_155728-cvi7ioi0/files/wandb-summary.json
+2022-02-06 15:57:56,394 DEBUG   SenderThread:74300 [sender.py:send():235] send: history
+2022-02-06 15:57:56,395 DEBUG   SenderThread:74300 [sender.py:send():235] send: summary
+2022-02-06 15:57:56,395 INFO    SenderThread:74300 [sender.py:_save_file():944] saving file wandb-summary.json with policy end
+2022-02-06 15:57:56,537 INFO    Thread-8  :74300 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/jeonghokim/GANs/StyleGAN2/wandb/run-20220206_155728-cvi7ioi0/files/wandb-summary.json
+2022-02-06 15:57:58,078 DEBUG   SenderThread:74300 [sender.py:send():235] send: history
+2022-02-06 15:57:58,079 DEBUG   SenderThread:74300 [sender.py:send():235] send: summary
+2022-02-06 15:57:58,083 INFO    SenderThread:74300 [sender.py:_save_file():944] saving file wandb-summary.json with policy end
+2022-02-06 15:57:58,538 INFO    Thread-8  :74300 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/jeonghokim/GANs/StyleGAN2/wandb/run-20220206_155728-cvi7ioi0/files/wandb-summary.json
+2022-02-06 15:57:59,772 DEBUG   SenderThread:74300 [sender.py:send():235] send: history
+2022-02-06 15:58:00,028 DEBUG   SenderThread:74300 [sender.py:send():235] send: summary
+2022-02-06 15:58:00,029 INFO    SenderThread:74300 [sender.py:_save_file():944] saving file wandb-summary.json with policy end
+2022-02-06 15:58:00,539 INFO    Thread-8  :74300 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/jeonghokim/GANs/StyleGAN2/wandb/run-20220206_155728-cvi7ioi0/files/config.yaml
+2022-02-06 15:58:00,539 INFO    Thread-8  :74300 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/jeonghokim/GANs/StyleGAN2/wandb/run-20220206_155728-cvi7ioi0/files/wandb-summary.json
+2022-02-06 15:58:01,433 DEBUG   SenderThread:74300 [sender.py:send():235] send: stats
+2022-02-06 15:58:01,437 DEBUG   HandlerThread:74300 [handler.py:handle_request():131] handle_request: stop_status
+2022-02-06 15:58:01,438 DEBUG   SenderThread:74300 [sender.py:send_request():249] send_request: stop_status
+2022-02-06 15:58:02,115 DEBUG   SenderThread:74300 [sender.py:send():235] send: history
+2022-02-06 15:58:02,116 DEBUG   SenderThread:74300 [sender.py:send():235] send: summary
+2022-02-06 15:58:02,117 INFO    SenderThread:74300 [sender.py:_save_file():944] saving file wandb-summary.json with policy end
+2022-02-06 15:58:02,540 INFO    Thread-8  :74300 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/jeonghokim/GANs/StyleGAN2/wandb/run-20220206_155728-cvi7ioi0/files/wandb-summary.json
+2022-02-06 15:58:03,814 DEBUG   SenderThread:74300 [sender.py:send():235] send: history
+2022-02-06 15:58:03,815 DEBUG   SenderThread:74300 [sender.py:send():235] send: summary
+2022-02-06 15:58:03,819 INFO    SenderThread:74300 [sender.py:_save_file():944] saving file wandb-summary.json with policy end
+2022-02-06 15:58:04,541 INFO    Thread-8  :74300 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/jeonghokim/GANs/StyleGAN2/wandb/run-20220206_155728-cvi7ioi0/files/wandb-summary.json
+2022-02-06 15:58:05,515 DEBUG   SenderThread:74300 [sender.py:send():235] send: history
+2022-02-06 15:58:05,516 DEBUG   SenderThread:74300 [sender.py:send():235] send: summary
+2022-02-06 15:58:05,517 INFO    SenderThread:74300 [sender.py:_save_file():944] saving file wandb-summary.json with policy end
+2022-02-06 15:58:05,542 INFO    Thread-8  :74300 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/jeonghokim/GANs/StyleGAN2/wandb/run-20220206_155728-cvi7ioi0/files/wandb-summary.json
+2022-02-06 15:58:07,213 DEBUG   SenderThread:74300 [sender.py:send():235] send: history
+2022-02-06 15:58:07,213 DEBUG   SenderThread:74300 [sender.py:send():235] send: summary
+2022-02-06 15:58:07,217 INFO    SenderThread:74300 [sender.py:_save_file():944] saving file wandb-summary.json with policy end
+2022-02-06 15:58:07,543 INFO    Thread-8  :74300 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/jeonghokim/GANs/StyleGAN2/wandb/run-20220206_155728-cvi7ioi0/files/wandb-summary.json
+2022-02-06 15:58:10,333 DEBUG   SenderThread:74300 [sender.py:send():235] send: history
+2022-02-06 15:58:10,334 DEBUG   SenderThread:74300 [sender.py:send():235] send: summary
+2022-02-06 15:58:10,335 INFO    SenderThread:74300 [sender.py:_save_file():944] saving file wandb-summary.json with policy end
+2022-02-06 15:58:10,545 INFO    Thread-8  :74300 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/jeonghokim/GANs/StyleGAN2/wandb/run-20220206_155728-cvi7ioi0/files/wandb-summary.json
+2022-02-06 15:58:12,036 DEBUG   SenderThread:74300 [sender.py:send():235] send: history
+2022-02-06 15:58:12,037 DEBUG   SenderThread:74300 [sender.py:send():235] send: summary
+2022-02-06 15:58:12,041 INFO    SenderThread:74300 [sender.py:_save_file():944] saving file wandb-summary.json with policy end
+2022-02-06 15:58:12,546 INFO    Thread-8  :74300 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/jeonghokim/GANs/StyleGAN2/wandb/run-20220206_155728-cvi7ioi0/files/wandb-summary.json
+2022-02-06 15:58:13,741 DEBUG   SenderThread:74300 [sender.py:send():235] send: history
+2022-02-06 15:58:13,741 DEBUG   SenderThread:74300 [sender.py:send():235] send: summary
+2022-02-06 15:58:13,742 INFO    SenderThread:74300 [sender.py:_save_file():944] saving file wandb-summary.json with policy end
+2022-02-06 15:58:14,547 INFO    Thread-8  :74300 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/jeonghokim/GANs/StyleGAN2/wandb/run-20220206_155728-cvi7ioi0/files/wandb-summary.json
+2022-02-06 15:58:15,446 DEBUG   SenderThread:74300 [sender.py:send():235] send: history
+2022-02-06 15:58:15,447 DEBUG   SenderThread:74300 [sender.py:send():235] send: summary
+2022-02-06 15:58:15,451 INFO    SenderThread:74300 [sender.py:_save_file():944] saving file wandb-summary.json with policy end
+2022-02-06 15:58:15,547 INFO    Thread-8  :74300 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/jeonghokim/GANs/StyleGAN2/wandb/run-20220206_155728-cvi7ioi0/files/wandb-summary.json
+2022-02-06 15:58:16,642 DEBUG   HandlerThread:74300 [handler.py:handle_request():131] handle_request: stop_status
+2022-02-06 15:58:16,642 DEBUG   SenderThread:74300 [sender.py:send_request():249] send_request: stop_status
+2022-02-06 15:58:17,805 DEBUG   SenderThread:74300 [sender.py:send():235] send: history
+2022-02-06 15:58:17,806 DEBUG   SenderThread:74300 [sender.py:send():235] send: summary
+2022-02-06 15:58:17,807 INFO    SenderThread:74300 [sender.py:_save_file():944] saving file wandb-summary.json with policy end
+2022-02-06 15:58:18,549 INFO    Thread-8  :74300 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/jeonghokim/GANs/StyleGAN2/wandb/run-20220206_155728-cvi7ioi0/files/wandb-summary.json
+2022-02-06 15:58:19,517 DEBUG   SenderThread:74300 [sender.py:send():235] send: history
+2022-02-06 15:58:19,517 DEBUG   SenderThread:74300 [sender.py:send():235] send: summary
+2022-02-06 15:58:19,518 INFO    SenderThread:74300 [sender.py:_save_file():944] saving file wandb-summary.json with policy end
+2022-02-06 15:58:19,550 INFO    Thread-8  :74300 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/jeonghokim/GANs/StyleGAN2/wandb/run-20220206_155728-cvi7ioi0/files/wandb-summary.json
+2022-02-06 15:58:21,223 DEBUG   SenderThread:74300 [sender.py:send():235] send: history
+2022-02-06 15:58:21,224 DEBUG   SenderThread:74300 [sender.py:send():235] send: summary
+2022-02-06 15:58:21,228 INFO    SenderThread:74300 [sender.py:_save_file():944] saving file wandb-summary.json with policy end
+2022-02-06 15:58:21,551 INFO    Thread-8  :74300 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/jeonghokim/GANs/StyleGAN2/wandb/run-20220206_155728-cvi7ioi0/files/wandb-summary.json
+2022-02-06 15:58:22,934 DEBUG   SenderThread:74300 [sender.py:send():235] send: history
+2022-02-06 15:58:22,934 DEBUG   SenderThread:74300 [sender.py:send():235] send: summary
+2022-02-06 15:58:22,935 INFO    SenderThread:74300 [sender.py:_save_file():944] saving file wandb-summary.json with policy end
+2022-02-06 15:58:23,552 INFO    Thread-8  :74300 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/jeonghokim/GANs/StyleGAN2/wandb/run-20220206_155728-cvi7ioi0/files/wandb-summary.json
+2022-02-06 15:58:25,299 DEBUG   SenderThread:74300 [sender.py:send():235] send: history
+2022-02-06 15:58:25,300 DEBUG   SenderThread:74300 [sender.py:send():235] send: summary
+2022-02-06 15:58:25,301 INFO    SenderThread:74300 [sender.py:_save_file():944] saving file wandb-summary.json with policy end
+2022-02-06 15:58:25,553 INFO    Thread-8  :74300 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/jeonghokim/GANs/StyleGAN2/wandb/run-20220206_155728-cvi7ioi0/files/wandb-summary.json
+2022-02-06 15:58:27,006 DEBUG   SenderThread:74300 [sender.py:send():235] send: history
+2022-02-06 15:58:27,006 DEBUG   SenderThread:74300 [sender.py:send():235] send: summary
+2022-02-06 15:58:27,010 INFO    SenderThread:74300 [sender.py:_save_file():944] saving file wandb-summary.json with policy end
+2022-02-06 15:58:27,555 INFO    Thread-8  :74300 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/jeonghokim/GANs/StyleGAN2/wandb/run-20220206_155728-cvi7ioi0/files/wandb-summary.json
+2022-02-06 15:58:28,717 DEBUG   SenderThread:74300 [sender.py:send():235] send: history
+2022-02-06 15:58:28,717 DEBUG   SenderThread:74300 [sender.py:send():235] send: summary
+2022-02-06 15:58:28,718 INFO    SenderThread:74300 [sender.py:_save_file():944] saving file wandb-summary.json with policy end
+2022-02-06 15:58:29,556 INFO    Thread-8  :74300 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/jeonghokim/GANs/StyleGAN2/wandb/run-20220206_155728-cvi7ioi0/files/wandb-summary.json
+2022-02-06 15:58:29,686 WARNING MainThread:74300 [internal.py:wandb_internal():152] Internal process interrupt: 1
+2022-02-06 15:58:31,557 INFO    Thread-8  :74300 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/jeonghokim/GANs/StyleGAN2/wandb/run-20220206_155728-cvi7ioi0/files/output.log
+2022-02-06 15:58:32,623 DEBUG   HandlerThread:74300 [handler.py:handle_request():131] handle_request: poll_exit
+2022-02-06 15:58:32,624 DEBUG   SenderThread:74300 [sender.py:send():235] send: telemetry
+2022-02-06 15:58:32,624 DEBUG   SenderThread:74300 [sender.py:send():235] send: exit
+2022-02-06 15:58:32,624 INFO    SenderThread:74300 [sender.py:send_exit():371] handling exit code: 255
+2022-02-06 15:58:32,625 INFO    SenderThread:74300 [sender.py:send_exit():373] handling runtime: 63
+2022-02-06 15:58:32,625 INFO    SenderThread:74300 [sender.py:_save_file():944] saving file wandb-summary.json with policy end
+2022-02-06 15:58:32,626 INFO    SenderThread:74300 [sender.py:send_exit():379] send defer
+2022-02-06 15:58:32,626 DEBUG   SenderThread:74300 [sender.py:send_request():249] send_request: poll_exit
+2022-02-06 15:58:32,627 DEBUG   HandlerThread:74300 [handler.py:handle_request():131] handle_request: defer
+2022-02-06 15:58:32,627 INFO    HandlerThread:74300 [handler.py:handle_request_defer():154] handle defer: 0
+2022-02-06 15:58:32,628 DEBUG   SenderThread:74300 [sender.py:send_request():249] send_request: defer
+2022-02-06 15:58:32,628 INFO    SenderThread:74300 [sender.py:send_request_defer():388] handle sender defer: 0
+2022-02-06 15:58:32,628 INFO    SenderThread:74300 [sender.py:transition_state():392] send defer: 1
+2022-02-06 15:58:32,628 DEBUG   HandlerThread:74300 [handler.py:handle_request():131] handle_request: defer
+2022-02-06 15:58:32,629 INFO    HandlerThread:74300 [handler.py:handle_request_defer():154] handle defer: 1
+2022-02-06 15:58:33,008 DEBUG   SenderThread:74300 [sender.py:send_request():249] send_request: defer
+2022-02-06 15:58:33,008 INFO    SenderThread:74300 [sender.py:send_request_defer():388] handle sender defer: 1
+2022-02-06 15:58:33,009 DEBUG   HandlerThread:74300 [handler.py:handle_request():131] handle_request: poll_exit
+2022-02-06 15:58:33,009 INFO    SenderThread:74300 [sender.py:transition_state():392] send defer: 2
+2022-02-06 15:58:33,010 DEBUG   SenderThread:74300 [sender.py:send_request():249] send_request: poll_exit
+2022-02-06 15:58:33,010 DEBUG   SenderThread:74300 [sender.py:send():235] send: stats
+2022-02-06 15:58:33,010 DEBUG   HandlerThread:74300 [handler.py:handle_request():131] handle_request: defer
+2022-02-06 15:58:33,012 INFO    HandlerThread:74300 [handler.py:handle_request_defer():154] handle defer: 2
+2022-02-06 15:58:33,012 DEBUG   SenderThread:74300 [sender.py:send_request():249] send_request: defer
+2022-02-06 15:58:33,012 INFO    SenderThread:74300 [sender.py:send_request_defer():388] handle sender defer: 2
+2022-02-06 15:58:33,012 INFO    SenderThread:74300 [sender.py:transition_state():392] send defer: 3
+2022-02-06 15:58:33,013 DEBUG   HandlerThread:74300 [handler.py:handle_request():131] handle_request: defer
+2022-02-06 15:58:33,013 INFO    HandlerThread:74300 [handler.py:handle_request_defer():154] handle defer: 3
+2022-02-06 15:58:33,014 DEBUG   SenderThread:74300 [sender.py:send():235] send: summary
+2022-02-06 15:58:33,015 INFO    SenderThread:74300 [sender.py:_save_file():944] saving file wandb-summary.json with policy end
+2022-02-06 15:58:33,015 DEBUG   SenderThread:74300 [sender.py:send_request():249] send_request: defer
+2022-02-06 15:58:33,015 INFO    SenderThread:74300 [sender.py:send_request_defer():388] handle sender defer: 3
+2022-02-06 15:58:33,015 INFO    SenderThread:74300 [sender.py:transition_state():392] send defer: 4
+2022-02-06 15:58:33,016 DEBUG   HandlerThread:74300 [handler.py:handle_request():131] handle_request: defer
+2022-02-06 15:58:33,016 INFO    HandlerThread:74300 [handler.py:handle_request_defer():154] handle defer: 4
+2022-02-06 15:58:33,016 DEBUG   SenderThread:74300 [sender.py:send_request():249] send_request: defer
+2022-02-06 15:58:33,017 INFO    SenderThread:74300 [sender.py:send_request_defer():388] handle sender defer: 4
+2022-02-06 15:58:33,112 DEBUG   HandlerThread:74300 [handler.py:handle_request():131] handle_request: poll_exit
+2022-02-06 15:58:33,302 INFO    SenderThread:74300 [sender.py:transition_state():392] send defer: 5
+2022-02-06 15:58:33,302 DEBUG   SenderThread:74300 [sender.py:send_request():249] send_request: poll_exit
+2022-02-06 15:58:33,303 DEBUG   HandlerThread:74300 [handler.py:handle_request():131] handle_request: defer
+2022-02-06 15:58:33,303 INFO    HandlerThread:74300 [handler.py:handle_request_defer():154] handle defer: 5
+2022-02-06 15:58:33,303 DEBUG   SenderThread:74300 [sender.py:send_request():249] send_request: defer
+2022-02-06 15:58:33,304 INFO    SenderThread:74300 [sender.py:send_request_defer():388] handle sender defer: 5
+2022-02-06 15:58:33,304 INFO    SenderThread:74300 [dir_watcher.py:finish():283] shutting down directory watcher
+2022-02-06 15:58:33,404 DEBUG   HandlerThread:74300 [handler.py:handle_request():131] handle_request: poll_exit
+2022-02-06 15:58:33,558 INFO    Thread-8  :74300 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/jeonghokim/GANs/StyleGAN2/wandb/run-20220206_155728-cvi7ioi0/files/config.yaml
+2022-02-06 15:58:33,559 INFO    SenderThread:74300 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/jeonghokim/GANs/StyleGAN2/wandb/run-20220206_155728-cvi7ioi0/files/wandb-summary.json
+2022-02-06 15:58:33,559 INFO    SenderThread:74300 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/jeonghokim/GANs/StyleGAN2/wandb/run-20220206_155728-cvi7ioi0/files/output.log
+2022-02-06 15:58:33,560 INFO    SenderThread:74300 [dir_watcher.py:finish():313] scan: /home/jeonghokim/GANs/StyleGAN2/wandb/run-20220206_155728-cvi7ioi0/files
+2022-02-06 15:58:33,560 INFO    SenderThread:74300 [dir_watcher.py:finish():327] scan save: /home/jeonghokim/GANs/StyleGAN2/wandb/run-20220206_155728-cvi7ioi0/files/config.yaml config.yaml
+2022-02-06 15:58:33,560 INFO    SenderThread:74300 [dir_watcher.py:finish():327] scan save: /home/jeonghokim/GANs/StyleGAN2/wandb/run-20220206_155728-cvi7ioi0/files/output.log output.log
+2022-02-06 15:58:33,561 INFO    SenderThread:74300 [dir_watcher.py:finish():327] scan save: /home/jeonghokim/GANs/StyleGAN2/wandb/run-20220206_155728-cvi7ioi0/files/wandb-summary.json wandb-summary.json
+2022-02-06 15:58:33,561 INFO    SenderThread:74300 [dir_watcher.py:finish():327] scan save: /home/jeonghokim/GANs/StyleGAN2/wandb/run-20220206_155728-cvi7ioi0/files/requirements.txt requirements.txt
+2022-02-06 15:58:33,562 INFO    SenderThread:74300 [dir_watcher.py:finish():327] scan save: /home/jeonghokim/GANs/StyleGAN2/wandb/run-20220206_155728-cvi7ioi0/files/conda-environment.yaml conda-environment.yaml
+2022-02-06 15:58:33,567 INFO    SenderThread:74300 [dir_watcher.py:finish():327] scan save: /home/jeonghokim/GANs/StyleGAN2/wandb/run-20220206_155728-cvi7ioi0/files/wandb-metadata.json wandb-metadata.json
+2022-02-06 15:58:33,569 INFO    SenderThread:74300 [sender.py:transition_state():392] send defer: 6
+2022-02-06 15:58:33,569 DEBUG   SenderThread:74300 [sender.py:send_request():249] send_request: poll_exit
+2022-02-06 15:58:33,591 DEBUG   HandlerThread:74300 [handler.py:handle_request():131] handle_request: defer
+2022-02-06 15:58:33,591 INFO    HandlerThread:74300 [handler.py:handle_request_defer():154] handle defer: 6
+2022-02-06 15:58:33,594 DEBUG   SenderThread:74300 [sender.py:send_request():249] send_request: defer
+2022-02-06 15:58:33,595 INFO    SenderThread:74300 [sender.py:send_request_defer():388] handle sender defer: 6
+2022-02-06 15:58:33,595 INFO    SenderThread:74300 [file_pusher.py:finish():177] shutting down file pusher
+2022-02-06 15:58:33,672 DEBUG   HandlerThread:74300 [handler.py:handle_request():131] handle_request: poll_exit
+2022-02-06 15:58:33,673 DEBUG   SenderThread:74300 [sender.py:send_request():249] send_request: poll_exit
+2022-02-06 15:58:33,775 DEBUG   HandlerThread:74300 [handler.py:handle_request():131] handle_request: poll_exit
+2022-02-06 15:58:33,775 DEBUG   SenderThread:74300 [sender.py:send_request():249] send_request: poll_exit
+2022-02-06 15:58:33,878 DEBUG   HandlerThread:74300 [handler.py:handle_request():131] handle_request: poll_exit
+2022-02-06 15:58:33,878 DEBUG   SenderThread:74300 [sender.py:send_request():249] send_request: poll_exit
+2022-02-06 15:58:33,980 DEBUG   HandlerThread:74300 [handler.py:handle_request():131] handle_request: poll_exit
+2022-02-06 15:58:33,981 DEBUG   SenderThread:74300 [sender.py:send_request():249] send_request: poll_exit
+2022-02-06 15:58:34,083 DEBUG   HandlerThread:74300 [handler.py:handle_request():131] handle_request: poll_exit
+2022-02-06 15:58:34,083 DEBUG   SenderThread:74300 [sender.py:send_request():249] send_request: poll_exit
+2022-02-06 15:58:34,185 DEBUG   HandlerThread:74300 [handler.py:handle_request():131] handle_request: poll_exit
+2022-02-06 15:58:34,186 DEBUG   SenderThread:74300 [sender.py:send_request():249] send_request: poll_exit
+2022-02-06 15:58:34,242 INFO    Thread-14 :74300 [upload_job.py:push():137] Uploaded file /home/jeonghokim/GANs/StyleGAN2/wandb/run-20220206_155728-cvi7ioi0/files/wandb-summary.json
+2022-02-06 15:58:34,244 INFO    Thread-15 :74300 [upload_job.py:push():137] Uploaded file /home/jeonghokim/GANs/StyleGAN2/wandb/run-20220206_155728-cvi7ioi0/files/requirements.txt
+2022-02-06 15:58:34,247 INFO    Thread-13 :74300 [upload_job.py:push():137] Uploaded file /home/jeonghokim/GANs/StyleGAN2/wandb/run-20220206_155728-cvi7ioi0/files/output.log
+2022-02-06 15:58:34,250 INFO    Thread-16 :74300 [upload_job.py:push():137] Uploaded file /home/jeonghokim/GANs/StyleGAN2/wandb/run-20220206_155728-cvi7ioi0/files/conda-environment.yaml
+2022-02-06 15:58:34,254 INFO    Thread-12 :74300 [upload_job.py:push():137] Uploaded file /home/jeonghokim/GANs/StyleGAN2/wandb/run-20220206_155728-cvi7ioi0/files/config.yaml
+2022-02-06 15:58:34,288 DEBUG   HandlerThread:74300 [handler.py:handle_request():131] handle_request: poll_exit
+2022-02-06 15:58:34,288 DEBUG   SenderThread:74300 [sender.py:send_request():249] send_request: poll_exit
+2022-02-06 15:58:34,390 DEBUG   HandlerThread:74300 [handler.py:handle_request():131] handle_request: poll_exit
+2022-02-06 15:58:34,391 DEBUG   SenderThread:74300 [sender.py:send_request():249] send_request: poll_exit
+2022-02-06 15:58:34,455 INFO    Thread-7  :74300 [sender.py:transition_state():392] send defer: 7
+2022-02-06 15:58:34,455 DEBUG   HandlerThread:74300 [handler.py:handle_request():131] handle_request: defer
+2022-02-06 15:58:34,456 INFO    HandlerThread:74300 [handler.py:handle_request_defer():154] handle defer: 7
+2022-02-06 15:58:34,456 DEBUG   SenderThread:74300 [sender.py:send_request():249] send_request: defer
+2022-02-06 15:58:34,456 INFO    SenderThread:74300 [sender.py:send_request_defer():388] handle sender defer: 7
+2022-02-06 15:58:34,493 DEBUG   HandlerThread:74300 [handler.py:handle_request():131] handle_request: poll_exit
+2022-02-06 15:58:35,035 INFO    SenderThread:74300 [sender.py:transition_state():392] send defer: 8
+2022-02-06 15:58:35,036 DEBUG   SenderThread:74300 [sender.py:send_request():249] send_request: poll_exit
+2022-02-06 15:58:35,036 DEBUG   HandlerThread:74300 [handler.py:handle_request():131] handle_request: defer
+2022-02-06 15:58:35,037 INFO    HandlerThread:74300 [handler.py:handle_request_defer():154] handle defer: 8
+2022-02-06 15:58:35,037 DEBUG   SenderThread:74300 [sender.py:send_request():249] send_request: defer
+2022-02-06 15:58:35,037 INFO    SenderThread:74300 [sender.py:send_request_defer():388] handle sender defer: 8
+2022-02-06 15:58:35,037 INFO    SenderThread:74300 [sender.py:transition_state():392] send defer: 9
+2022-02-06 15:58:35,039 DEBUG   HandlerThread:74300 [handler.py:handle_request():131] handle_request: defer
+2022-02-06 15:58:35,039 DEBUG   SenderThread:74300 [sender.py:send():235] send: final
+2022-02-06 15:58:35,039 INFO    HandlerThread:74300 [handler.py:handle_request_defer():154] handle defer: 9
+2022-02-06 15:58:35,039 DEBUG   SenderThread:74300 [sender.py:send():235] send: footer
+2022-02-06 15:58:35,040 DEBUG   SenderThread:74300 [sender.py:send_request():249] send_request: defer
+2022-02-06 15:58:35,040 INFO    SenderThread:74300 [sender.py:send_request_defer():388] handle sender defer: 9
+2022-02-06 15:58:35,138 DEBUG   HandlerThread:74300 [handler.py:handle_request():131] handle_request: poll_exit
+2022-02-06 15:58:35,138 DEBUG   SenderThread:74300 [sender.py:send_request():249] send_request: poll_exit
+2022-02-06 15:58:35,139 INFO    SenderThread:74300 [file_pusher.py:join():182] waiting for file pusher
+2022-02-06 15:58:35,541 DEBUG   HandlerThread:74300 [handler.py:handle_request():131] handle_request: get_summary
+2022-02-06 15:58:35,543 DEBUG   HandlerThread:74300 [handler.py:handle_request():131] handle_request: sampled_history
+2022-02-06 15:58:35,547 DEBUG   HandlerThread:74300 [handler.py:handle_request():131] handle_request: shutdown
+2022-02-06 15:58:35,547 INFO    HandlerThread:74300 [handler.py:finish():739] shutting down handler
+2022-02-06 15:58:36,039 INFO    WriterThread:74300 [datastore.py:close():281] close: /home/jeonghokim/GANs/StyleGAN2/wandb/run-20220206_155728-cvi7ioi0/run-cvi7ioi0.wandb
+2022-02-06 15:58:36,539 INFO    SenderThread:74300 [sender.py:finish():1075] shutting down sender
+2022-02-06 15:58:36,539 INFO    SenderThread:74300 [file_pusher.py:finish():177] shutting down file pusher
+2022-02-06 15:58:36,539 INFO    SenderThread:74300 [file_pusher.py:join():182] waiting for file pusher
+2022-02-06 15:58:36,543 INFO    MainThread:74300 [internal.py:handle_exit():79] Internal process exited

@@ -1,0 +1,134 @@
+nohup: ignoring input
+data_root_dir            : /home/data/CECTGAN/
+data_name                : sungbuk
+val_ratio                : 0.2
+input_nc                 : 3
+output_nc                : 3
+resize                   : True
+crop                     : True
+size                     : 286
+crop_size                : 256
+flip                     : True
+input_ch                 : 3
+output_ch                : 3
+pool_size                : 50
+batch_size               : 1
+num_workers              : 4
+lr_scheduler             : linear
+start_epoch              : 1
+n_epochs                 : 3000
+linearlr_epochs          : 2000
+steplr_step              : 50
+gan_loss_name            : lsgan
+target_real_label        : 1.0
+target_gene_label        : 0.0
+G_lr                     : 0.0002
+D_lr                     : 0.0002
+G_betas                  : (0.5, 0.999)
+D_betas                  : (0.5, 0.999)
+lambda_ID                : 0.5
+lambda_A                 : 10.0
+lambda_B                 : 10.0
+valid_epoch_freq         : 100
+G_AB_name                : resnet_9blks
+G_BA_name                : resnet_9blks
+D_A_name                 : basic
+D_B_name                 : basic
+ngf                      : 64
+ndf                      : 64
+G_norm_type              : instance
+D_norm_type              : instance
+G_init_type              : normal
+D_init_type              : normal
+G_init_gain              : 0.02
+D_init_gain              : 0.02
+D_n_layers               : 3
+G_use_dropout            : False
+save_root_dir            : /home/jeonghokim/CECT/save/cyclegan
+save_name                : [G_AB-resnet_9blks]_[G_BA-resnet_9blks]_[D_A-basic]_[D_B-basic]
+img_save_iter_freq       : 10000
+model_save_iter_freq     : 10000
+n_save_images            : 8
+msssim_epoch_freq        : 100
+local_rank               : 0
+world_size               : 1
+DDP                      : False
+dist_backend             : nccl
+use_wandb                : False
+save_dir                 : /home/jeonghokim/CECT/save/cyclegan/train_7510_batch1
+img_save_dir             : /home/jeonghokim/CECT/save/cyclegan/train_7510_batch1/save_images
+model_save_dir           : /home/jeonghokim/CECT/save/cyclegan/train_7510_batch1/save_models
+logger_path              : /home/jeonghokim/CECT/save/cyclegan/train_7510_batch1/log.txt
+wandb_name               : [G_AB-resnet_9blks]_[G_BA-resnet_9blks]_[D_A-basic]_[D_B-basic]
+wandb_notes              : [G_AB-resnet_9blks]_[G_BA-resnet_9blks]_[D_A-basic]_[D_B-basic]
+[train] # ncct: 7510, # cect: 7510
+[valid] # ncct: 865, # cect: 865
+/home/jeonghokim/anaconda3/envs/CECT/lib/python3.8/site-packages/torchvision/transforms/transforms.py:310: UserWarning: The use of the transforms.Scale transform is deprecated, please use transforms.Resize instead.
+  warnings.warn("The use of the transforms.Scale transform is deprecated, " +
+/home/jeonghokim/anaconda3/envs/CECT/lib/python3.8/site-packages/torchvision/transforms/transforms.py:280: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
+  warnings.warn(
+[Epoch-1] loss G: 2.234939210027575, loss D: 0.538722140126714
+[Epoch-2] loss G: 1.4176239882264727, loss D: 0.5043431463238403
+[Epoch-3] loss G: 1.1898944818465593, loss D: 0.5048883470809571
+[Epoch-4] loss G: 1.1839873018817164, loss D: 0.4826514716611086
+[Epoch-5] loss G: 1.3574335338986825, loss D: 0.42339352504133226
+[Epoch-6] loss G: 1.4460953049272418, loss D: 0.38859557202991135
+[Epoch-7] loss G: 1.4634413103050938, loss D: 0.37456729861395494
+[Epoch-8] loss G: 1.7338112205306635, loss D: 0.2720119508409925
+[Epoch-9] loss G: 1.6358271423970336, loss D: 0.2932862528687846
+[Epoch-10] loss G: 1.8137358126802228, loss D: 0.22341723342496808
+[Epoch-11] loss G: 1.802960924008556, loss D: 0.21867568898721587
+[Epoch-12] loss G: 1.7911235359711908, loss D: 0.2205262913622865
+[Epoch-13] loss G: 1.7622587996578407, loss D: 0.22839017688648927
+[Epoch-14] loss G: 1.6669559101567923, loss D: 0.25893105581680564
+[Epoch-15] loss G: 1.7556892028026352, loss D: 0.22679411548142694
+[Epoch-16] loss G: 1.9163972034832133, loss D: 0.1723572606192939
+[Epoch-17] loss G: 1.9452135690836392, loss D: 0.16688637385422614
+[Epoch-18] loss G: 2.0558980550096133, loss D: 0.13117365208981477
+[Epoch-19] loss G: 1.6851515515825244, loss D: 0.2427344843626181
+[Epoch-20] loss G: 1.7455302891575704, loss D: 0.21513836243436033
+[Epoch-21] loss G: 1.6344269233838855, loss D: 0.2423043704903579
+[Epoch-22] loss G: 1.7849409888095449, loss D: 0.1972942798520586
+[Epoch-23] loss G: 1.9953493449484778, loss D: 0.12902691793856216
+[Epoch-24] loss G: 1.819051025416975, loss D: 0.19589616076826377
+[Epoch-25] loss G: 1.8782255226222875, loss D: 0.15837547984408257
+[Epoch-26] loss G: 1.8550090807890607, loss D: 0.17317331636847852
+[Epoch-27] loss G: 1.809136409789681, loss D: 0.18136094291545649
+[Epoch-28] loss G: 2.0022213296312468, loss D: 0.11934029685628518
+[Epoch-29] loss G: 1.8933044456848291, loss D: 0.15491244976542712
+[Epoch-30] loss G: 2.034650065919531, loss D: 0.10528040400190966
+[Epoch-31] loss G: 1.6944163132999612, loss D: 0.21192128487977976
+[Epoch-32] loss G: 2.0152056683157475, loss D: 0.10345375855331161
+[Epoch-33] loss G: 1.8557430605913765, loss D: 0.1546770758664275
+[Epoch-34] loss G: 1.9928716143977627, loss D: 0.11102095143922223
+[Epoch-35] loss G: 2.030934280403127, loss D: 0.09901278575540666
+[Epoch-36] loss G: 2.0742467353093166, loss D: 0.08228457654738296
+[Epoch-37] loss G: 2.0293273359179973, loss D: 0.10220748822552929
+[Epoch-38] loss G: 1.9213986907079914, loss D: 0.13029364622278652
+[Epoch-39] loss G: 1.9755081124454934, loss D: 0.11328759049096414
+[Epoch-40] loss G: 2.077886589230615, loss D: 0.07524540298959406
+[Epoch-41] loss G: 2.0321312113782857, loss D: 0.09054838800449395
+[Epoch-42] loss G: 2.0206745813792937, loss D: 0.09254637301872211
+[Epoch-43] loss G: 2.0451836713144527, loss D: 0.09068601285925906
+[Epoch-44] loss G: 1.9974099897354167, loss D: 0.10919840524215549
+[Epoch-45] loss G: 2.05230860984754, loss D: 0.08983397607458446
+[Epoch-46] loss G: 1.6818186085567017, loss D: 0.21585902062116982
+[Epoch-47] loss G: 1.928940712401616, loss D: 0.12605084398799835
+[Epoch-48] loss G: 1.934211921493477, loss D: 0.12202787973732625
+[Epoch-49] loss G: 1.4863605917373128, loss D: 0.2657606755384553
+[Epoch-50] loss G: 1.7268364638566336, loss D: 0.1862059007926761
+[Epoch-51] loss G: 1.787999149391083, loss D: 0.16809485004962138
+[Epoch-52] loss G: 1.7828527972320425, loss D: 0.16280739153992663
+[Epoch-53] loss G: 1.7848996254004112, loss D: 0.16730604534745513
+[Epoch-54] loss G: 1.8921952173371765, loss D: 0.1288108012941883
+[Epoch-55] loss G: 1.7497338520861498, loss D: 0.1806238005930166
+[Epoch-56] loss G: 1.8533958861775468, loss D: 0.14201309375304322
+[Epoch-57] loss G: 1.8416627379454247, loss D: 0.14436983289972155
+[Epoch-58] loss G: 2.0789530705913566, loss D: 0.07213446938456936
+[Epoch-59] loss G: 1.7275926723778645, loss D: 0.18176274279345783
+[Epoch-60] loss G: 1.5618405067174634, loss D: 0.23120025661997198
+[Epoch-61] loss G: 1.9119151735194673, loss D: 0.11739505387383195
+[Epoch-62] loss G: 1.820487204555189, loss D: 0.15130961340713808
+[Epoch-63] loss G: 1.8956081879043707, loss D: 0.1333373847479849
+[Epoch-64] loss G: 2.1067714650288085, loss D: 0.05964155254030498
+[Epoch-65] loss G: 2.0905022650044387, loss D: 0.061462772383941176

@@ -1,0 +1,42 @@
+data_root_dir            : /home/data/FFHQ_1024
+batch_size               : 8
+n_workers                : 1
+n_iters                  : 800000
+size                     : 1024
+style_dim                : 512
+n_mlp                    : 8
+channel_multiplier       : 2
+reg_every_G              : 4
+reg_every_D              : 16
+lr                       : 0.002
+augment_p                : 0
+augment                  : False
+ada_target               : 0.6
+mixing                   : 0.9
+n_samples                : 16
+path_batch_shrink        : 2
+w_path_regularize        : 2
+r1                       : 10
+cp_path                  : None
+save_root_dir            : /media/data1/jeonghokim/GANs/StyleGAN2/save/20220206_train
+log_save_iter_freq       : 100
+img_save_iter_freq       : 1000
+model_save_iter_freq     : 1000
+local_rank               : 0
+world_size               : 4
+use_wandb                : True
+wandb_name               : 20220206
+wandb_notes              : test
+DDP_backend              : nccl
+logger_path              : /media/data1/jeonghokim/GANs/StyleGAN2/save/20220206_train/logger.txt
+save_img_dir             : /media/data1/jeonghokim/GANs/StyleGAN2/save/20220206_train/save_images
+save_model_dir           : /media/data1/jeonghokim/GANs/StyleGAN2/save/20220206_train/save_models
+# imgs : 70000
+
+
+
+
+
+
+
+
