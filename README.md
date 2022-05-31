@@ -20,3 +20,4 @@ Implement GANs
 17. StyleSwin => https://arxiv.org/abs/2112.10762
 18. CUT => https://arxiv.org/pdf/2007.15651.pdf
 19. Vid2Vid => https://arxiv.org/abs/1808.06601
+20. MUNIT => https://arxiv.org/abs/1804.04732
