@@ -21,3 +21,4 @@ Implement GANs
 18. CUT => https://arxiv.org/pdf/2007.15651.pdf
 19. Vid2Vid => https://arxiv.org/abs/1808.06601
 20. MUNIT => https://arxiv.org/abs/1804.04732
+21. Attention CycleGAN => https://arxiv.org/abs/1806.02311
