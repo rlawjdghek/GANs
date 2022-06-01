@@ -1,0 +1,43 @@
+WARNING:torch.distributed.run:
+*****************************************
+Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+*****************************************
+[Train] # of imgs A : 5284, # of imgs B : 406
+[Valid] # of imgs A : 945, # of imgs B : 0
+1 epoch = 1762 iters
+[iter - 100/17620000]_[time - 43.92sec]_[loss G - 4.4249]_[loss D - 0.9937]
+[iter - 200/17620000]_[time - 87.25sec]_[loss G - 4.2224]_[loss D - 0.8393]
+[iter - 300/17620000]_[time - 130.76sec]_[loss G - 4.2503]_[loss D - 0.7530]
+[iter - 400/17620000]_[time - 174.33sec]_[loss G - 4.1945]_[loss D - 0.7153]
+[iter - 500/17620000]_[time - 217.62sec]_[loss G - 4.1381]_[loss D - 0.6861]
+[iter - 600/17620000]_[time - 261.69sec]_[loss G - 4.0628]_[loss D - 0.6570]
+[iter - 700/17620000]_[time - 305.35sec]_[loss G - 4.0093]_[loss D - 0.6254]
+[iter - 800/17620000]_[time - 348.90sec]_[loss G - 3.9426]_[loss D - 0.6066]
+[iter - 900/17620000]_[time - 392.77sec]_[loss G - 3.8816]_[loss D - 0.5933]
+[iter - 1000/17620000]_[time - 437.11sec]_[loss G - 3.8258]_[loss D - 0.5790]
+[iter - 1100/17620000]_[time - 481.82sec]_[loss G - 3.7772]_[loss D - 0.5782]
+[iter - 1200/17620000]_[time - 526.66sec]_[loss G - 3.7341]_[loss D - 0.5707]
+[iter - 1300/17620000]_[time - 571.05sec]_[loss G - 3.6862]_[loss D - 0.5640]
+[iter - 1400/17620000]_[time - 615.28sec]_[loss G - 3.6500]_[loss D - 0.5536]
+[iter - 1500/17620000]_[time - 659.50sec]_[loss G - 3.6353]_[loss D - 0.5439]
+[iter - 1600/17620000]_[time - 704.57sec]_[loss G - 3.6100]_[loss D - 0.5332]
+[iter - 1700/17620000]_[time - 748.74sec]_[loss G - 3.5818]_[loss D - 0.5304]
+[Epoch - 1/10000]_[time - 776.76sec]_[loss G - 3.5635]_[loss D - 0.5282]_[G lr - 0.0002]_[D lr - 0.0002]
+[iter - 1800/17620000]_[time - 793.61sec]_[loss G - 3.1371]_[loss D - 0.3652]
+[iter - 1900/17620000]_[time - 837.73sec]_[loss G - 3.1493]_[loss D - 0.4152]
+[iter - 2000/17620000]_[time - 881.89sec]_[loss G - 3.0988]_[loss D - 0.4427]
+[iter - 2100/17620000]_[time - 926.20sec]_[loss G - 3.0871]_[loss D - 0.4364]
+[iter - 2200/17620000]_[time - 970.45sec]_[loss G - 3.0498]_[loss D - 0.4425]
+[iter - 2300/17620000]_[time - 1015.65sec]_[loss G - 3.0782]_[loss D - 0.4449]
+[iter - 2400/17620000]_[time - 1060.73sec]_[loss G - 3.0298]_[loss D - 0.4505]
+[iter - 2500/17620000]_[time - 1105.63sec]_[loss G - 3.0335]_[loss D - 0.4362]
+[iter - 2600/17620000]_[time - 1150.74sec]_[loss G - 3.0175]_[loss D - 0.4341]
+[iter - 2700/17620000]_[time - 1195.47sec]_[loss G - 3.0053]_[loss D - 0.4329]
+[iter - 2800/17620000]_[time - 1240.07sec]_[loss G - 2.9861]_[loss D - 0.4389]
+[iter - 2900/17620000]_[time - 1284.69sec]_[loss G - 2.9792]_[loss D - 0.4391]
+[iter - 3000/17620000]_[time - 1329.11sec]_[loss G - 2.9633]_[loss D - 0.4395]
+[iter - 3100/17620000]_[time - 1373.64sec]_[loss G - 2.9546]_[loss D - 0.4417]
+[iter - 3200/17620000]_[time - 1418.08sec]_[loss G - 2.9577]_[loss D - 0.4343]
+[iter - 3300/17620000]_[time - 1462.63sec]_[loss G - 2.9550]_[loss D - 0.4347]
+[iter - 3400/17620000]_[time - 1507.06sec]_[loss G - 2.9517]_[loss D - 0.4294]
+[iter - 3500/17620000]_[time - 1551.62sec]_[loss G - 2.9466]_[loss D - 0.4321]
