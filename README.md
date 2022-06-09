@@ -22,3 +22,4 @@ Implement GANs
 19. Vid2Vid => https://arxiv.org/abs/1808.06601
 20. MUNIT => https://arxiv.org/abs/1804.04732
 21. Attention CycleGAN => https://arxiv.org/abs/1806.02311
+22. DRIT ++ => https://arxiv.org/abs/1905.01270
