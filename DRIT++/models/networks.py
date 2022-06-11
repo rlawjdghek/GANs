@@ -8,17 +8,22 @@ import torch.nn.functional as F
 from torch.nn.utils import spectral_norm
 
 from .base_network import BaseNetwork
-
+def gaussian_weights_init(m):
+  classname = m.__class__.__name__
+  if classname.find('Conv') != -1 and classname.find('Conv') == 0:
+    m.weight.data.normal_(0.0, 0.02)
 class LeakyReLUConv2d(nn.Module):
     def __init__(self, in_ch, out_ch, kernel_size, stride, padding=0, norm="None"):
         super().__init__()
         blk = []
         blk.append(nn.ReflectionPad2d(padding))
-        blk.append(spectral_norm(nn.Conv2d(in_ch, out_ch, kernel_size=kernel_size, stride=stride, padding=0, bias=True)))
+        # blk.append(spectral_norm(nn.Conv2d(in_ch, out_ch, kernel_size=kernel_size, stride=stride, padding=0, bias=True)))
+        blk.append(nn.Conv2d(in_ch, out_ch, kernel_size=kernel_size, stride=stride, padding=0, bias=True))
         if norm == "in":
-            blk.append(nn.InstanceNorm2d(out_ch))
-        blk.append(nn.LeakyReLU(True))
+            blk.append(nn.InstanceNorm2d(out_ch, affine=False))
+        blk.append(nn.LeakyReLU(inplace=True))
         self.blk = nn.Sequential(*blk)
+        self.blk.apply(gaussian_weights_init)
     def forward(self, x):
         return self.blk(x)
 class ReLUINConv2d(nn.Module):
@@ -30,19 +35,11 @@ class ReLUINConv2d(nn.Module):
         blk.append(nn.InstanceNorm2d(out_ch, affine=False))
         blk.append(nn.ReLU(True))
         self.blk = nn.Sequential(*blk)
+        self.blk.apply(gaussian_weights_init)
     def forward(self, x):
         return self.blk(x)
 def Conv3x3(in_ch, out_ch, stride=1):
     return [nn.ReflectionPad2d(1), nn.Conv2d(in_ch, out_ch, kernel_size=3, stride=1)]
-# class Conv3x3(nn.Module):
-#     def __init__(self, in_ch, out_ch, stride=1):
-#         super().__init__()
-#         blk = []
-#         blk.append(nn.ReflectionPad2d(1))
-#         blk.append(nn.Conv2d(in_ch, out_ch, kernel_size=3, stride=stride))
-#         self.blk = nn.Sequential(*blk)
-#     def forward(self, x):
-#         return self.blk(x)
 class INResBlk(nn.Module):
     def __init__(self, in_ch, out_ch, stride=1, dropout=0.0):
         super().__init__()
@@ -55,6 +52,7 @@ class INResBlk(nn.Module):
         if dropout > 0:
             blk.append(nn.Dropout(p=dropout))
         self.blk = nn.Sequential(*blk)
+        self.blk.apply(gaussian_weights_init)
     def forward(self, x):
         res = x
         out = self.blk(x)
@@ -85,6 +83,10 @@ class MisINResBlk(nn.Module):
         self.conv2 = nn.Sequential(*conv2)
         self.blk1 = nn.Sequential(*blk1)
         self.blk2 = nn.Sequential(*blk2)
+        self.conv1.apply(gaussian_weights_init)
+        self.conv2.apply(gaussian_weights_init)
+        self.blk1.apply(gaussian_weights_init)
+        self.blk2.apply(gaussian_weights_init)
     def forward(self, x, z):
         res = x
         z_expand = z.reshape(z.shape[0], z.shape[1], 1, 1).expand(z.shape[0], z.shape[1], x.shape[2], x.shape[3])
@@ -116,6 +118,7 @@ class ReLULNConvT2d(nn.Module):
         blk.append(LayerNorm(out_ch))
         blk.append(nn.ReLU(True))
         self.blk = nn.Sequential(*blk)
+        self.blk.apply(gaussian_weights_init)
     def forward(self, x):
         out = self.blk(x)
         return out

@@ -36,7 +36,7 @@ class BCEHalfLoss(nn.Module):
     def forward(self, pred):
         loss_D = 0
         for p in pred:
-            output_p = F.sigmoid(p)
+            output_p = torch.sigmoid(p)
             half_label = 0.5 * torch.ones((output_p.shape[0])).cuda(output_p.get_device())
             loss_D += self.criterion(output_p, half_label)
         return loss_D
