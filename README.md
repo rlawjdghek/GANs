@@ -23,3 +23,4 @@ Implement GANs
 20. MUNIT => https://arxiv.org/abs/1804.04732
 21. Attention CycleGAN => https://arxiv.org/abs/1806.02311
 22. DRIT ++ => https://arxiv.org/abs/1905.01270
+23. StarGANv2 => https://arxiv.org/abs/1912.01865
