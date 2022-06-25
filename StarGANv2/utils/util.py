@@ -62,6 +62,7 @@ def tensor2img(x):
         x = x[0]
     x = x.permute(1,2,0).detach().cpu().numpy()
     x = (x+1)/2
+    x = np.clip(x, 0, 1)
     x = np.uint8(x*255.0)
     if x.shape[-1] == 1:  # gray sclae
         x = np.concatenate([x,x,x], axis=-1)

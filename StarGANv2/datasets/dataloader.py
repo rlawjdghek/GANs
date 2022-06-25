@@ -28,11 +28,22 @@ def get_dataloader(args):
     src_loader = DataLoader(src_dataset, batch_size=args.batch_size, shuffle=shuffle, num_workers=args.n_workers, pin_memory=True, sampler=src_sampler, drop_last=True)
     ref_loader = DataLoader(ref_dataset, batch_size=args.batch_size, shuffle=shuffle, num_workers=args.n_workers, pin_memory=True, sampler=ref_sampler, drop_last=True)
     return src_loader, ref_loader
-def get_single_dataloader(data_dir, img_size, batch_size):
+def get_single_dataloader(data_dir, img_size, batch_size, imagenet_normalize=True):
+    if imagenet_normalize:
+        H = 299
+        W = 299
+        mean = [0.485, 0.456, 0.406]
+        std = [0.229, 0.224, 0.225]
+    else:
+        H = img_size
+        W = img_size
+        mean = [0.5, 0.5, 0.5]
+        std = [0.5, 0.5, 0.5]
     transform = T.Compose([
         T.Resize((img_size, img_size)),
+        T.Resize((H,W)),
         T.ToTensor(),
-        T.Normalize(0.5, 0.5)
+        T.Normalize(mean, std)
     ])
     dataset = SingleDataset(data_dir=data_dir, transform=transform)
     loader = DataLoader(dataset, batch_size=batch_size, shuffle=True, num_workers=4, pin_memory=True)

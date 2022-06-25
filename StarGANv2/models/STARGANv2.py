@@ -30,8 +30,7 @@ class STARGANv2(BaseModel):
             self.F = DDP(self.F, device_ids=[args.local_rank])
         self.optimizer_D = optim.Adam(self.D.parameters(), lr=args.D_lr, betas=args.betas, weight_decay=args.weight_decay)
         self.optimizer_G = optim.Adam(self.G.parameters(), lr=args.G_lr, betas=args.betas, weight_decay=args.weight_decay)
-        self.optimizer_E = optim.Adam(self.E.parameters(), lr=args.E_lr, betas=args.betas,
-        weight_decay=args.weight_decay)
+        self.optimizer_E = optim.Adam(self.E.parameters(), lr=args.E_lr, betas=args.betas, weight_decay=args.weight_decay)
         self.optimizer_F = optim.Adam(self.F.parameters(), lr=args.F_lr, betas=args.betas, weight_decay=args.weight_decay)
 
         self.criterion_GAN = GANLoss()
@@ -49,22 +48,24 @@ class STARGANv2(BaseModel):
         self.label_B = ref_label
         self.z = z
         self.z2 = z2
+    def reset_grad(self):
+        self.optimizer_D.zero_grad()
+        self.optimizer_G.zero_grad()
+        self.optimizer_E.zero_grad()
+        self.optimizer_F.zero_grad()
     def train(self):
         # update D
-        self.set_requires_grad([self.G, self.F, self.E], requires_grad=False)
-        self.set_requires_grad([self.D], requires_grad=True)
         self.update_D()
         
         # update GEF
-        self.set_requires_grad([self.G, self.F, self.E], requires_grad=True)
-        self.set_requires_grad([self.D], requires_grad=False)
         self.update_GEF()
     def update_D(self):
         # style from z
         self.real_A.requires_grad_()
         pred_real = self.D(self.real_A, self.label_A)
-        style_B = self.F(self.z, self.label_B)
-        gene_B = self.G(self.real_A, style_B)
+        with torch.no_grad():
+            style_B = self.F(self.z, self.label_B)
+            gene_B = self.G(self.real_A, style_B)
         # pred_gene = self.D(gene_B.detach(), self.label_B)
         pred_gene = self.D(gene_B, self.label_B)
         loss_D_adv_real = self.criterion_GAN(pred_real, is_target_real=True)
@@ -72,7 +73,7 @@ class STARGANv2(BaseModel):
         loss_D_adv = loss_D_adv_real + loss_D_adv_gene
         loss_D_reg = self.criterion_r1_reg(pred_real, self.real_A) * self.args.lambda_reg
         loss_D_z = loss_D_adv + loss_D_reg
-        self.optimizer_D.zero_grad()
+        self.reset_grad()
         loss_D_z.backward()
         self.optimizer_D.step()     
 
@@ -83,8 +84,9 @@ class STARGANv2(BaseModel):
 
         # style from ref
         pred_real = self.D(self.real_A, self.label_A)
-        style_B = self.E(self.real_B, self.label_B)
-        gene_B = self.G(self.real_A, style_B)
+        with torch.no_grad():
+            style_B = self.E(self.real_B, self.label_B)
+            gene_B = self.G(self.real_A, style_B)
         # pred_gene = self.D(gene_B.detach(), self.label_B)
         pred_gene = self.D(gene_B, self.label_B)
         loss_D_adv_real = self.criterion_GAN(pred_real, is_target_real=True)
@@ -92,13 +94,12 @@ class STARGANv2(BaseModel):
         loss_D_adv = loss_D_adv_real + loss_D_adv_gene
         loss_D_reg = self.criterion_r1_reg(pred_real, self.real_A) * self.args.lambda_reg
         loss_D_ref = loss_D_adv + loss_D_reg
-        self.optimizer_D.zero_grad()
+        self.reset_grad()
         loss_D_ref.backward()
         self.optimizer_D.step()
-        
-        self.loss_D = loss_D_z.detach() + loss_D_ref.detach()
 
         #### loss 기록용 ####
+        self.loss_D = loss_D_z.detach() + loss_D_ref.detach()
         self.D_ref_real_val = loss_D_adv_real.item()
         self.D_ref_gene_val = loss_D_adv_gene.item()
         self.D_ref_ref_val = loss_D_ref.item()
@@ -126,9 +127,7 @@ class STARGANv2(BaseModel):
         loss_cycle = self.criterion_L1(cycle_A, self.real_A) * self.args.lambda_cycle
 
         loss_G_z = loss_adv + loss_style - loss_ds + loss_cycle
-        self.optimizer_G.zero_grad()
-        self.optimizer_E.zero_grad()
-        self.optimizer_F.zero_grad()
+        self.reset_grad()
         loss_G_z.backward()
         self.optimizer_G.step()
         self.optimizer_E.step()
@@ -163,7 +162,7 @@ class STARGANv2(BaseModel):
         loss_cycle = self.criterion_L1(cycle_A, self.real_A) * self.args.lambda_cycle
 
         loss_G_ref = loss_adv + loss_style - loss_ds + loss_cycle
-        self.optimizer_G.zero_grad()
+        self.reset_grad()
         loss_G_ref.backward()
         self.optimizer_G.step()
 
@@ -174,7 +173,6 @@ class STARGANv2(BaseModel):
         self.G_ref_sty_val = loss_style.item()
         self.G_ref_ds_val = loss_ds.item()
         self.G_ref_cyc_val = loss_cycle.item()
-
     def DDP_save_load(self, save_path):
         if self.args.local_rank == 0:
             state_dict = {}
@@ -279,11 +277,11 @@ class STARGANv2(BaseModel):
         for ref_idx, ref_domain in enumerate(domain_names):
             if mode == "reference":
                 ref_data_dir = opj(self.args.data_root_dir, self.args.data_name, "val", ref_domain)
-                ref_loader = get_single_dataloader(data_dir=ref_data_dir, img_size=self.args.img_size, batch_size=self.args.batch_size)
+                ref_loader = get_single_dataloader(data_dir=ref_data_dir, img_size=self.args.img_size, batch_size=self.args.batch_size, imagenet_normalize=False)
             src_domains = [x for x in domain_names if x != ref_domain]
             for src_idx, src_domain in enumerate(src_domains):
                 src_data_dir = opj(self.args.data_root_dir, self.args.data_name, "val", src_domain)
-                src_loader = get_single_dataloader(data_dir=src_data_dir, img_size=self.args.img_size, batch_size=self.args.batch_size)
+                src_loader = get_single_dataloader(data_dir=src_data_dir, img_size=self.args.img_size, batch_size=self.args.batch_size, imagenet_normalize=False)
                 task = f"{src_domain}_to_{ref_domain}"
                 print(f"Evaluating LPIPS on {task}....")
                 save_dir = opj(self.args.eval_save_dir, task)

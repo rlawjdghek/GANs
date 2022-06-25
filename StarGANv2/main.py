@@ -2,11 +2,13 @@ import os
 from os.path import join as opj
 import argparse
 from datetime import datetime
+import time 
 
 import numpy as np
 import cv2
 import torch
 import torch.distributed as dist
+from torch.backends import cudnn
 
 from utils.util import *
 from datasets.dataloader import get_dataloader
@@ -89,6 +91,7 @@ def main_worker(args, logger):
     model = STARGANv2(args)
     model.print_n_params(logger)
     cur_iter = 1
+    start_time = time.time()
     for epoch in range(1, args.n_epochs+1):
         loss_D_meter = AverageMeter()
         loss_G_meter = AverageMeter()
@@ -118,7 +121,7 @@ def main_worker(args, logger):
                 args.lambda_ds -= (args.initial_lambda_ds / args.ds_iter)
 
             if cur_iter % args.log_save_iter_freq == 0:
-                msg = f"[Train]_[iter - {cur_iter}/{args.total_iter}]_[D/latent_real - {model.D_latent_real_val:.4f}]_[D/latent_fake - {model.D_latent_gene_val:.4f}]_[D/latent_reg - {model.D_latent_reg_val:.4f}]_[D/ref_real - {model.D_ref_real_val:.4f}]_[D/ref_fake - {model.D_ref_gene_val:.4f}]_[D/ref_reg - {model.D_ref_ref_val:.4f}]_[G/latent_adv - {model.G_latent_adv_val:.4f}]_[G/latent_sty - {model.G_latent_sty_val:.4f}]_[G/latent_ds - {model.G_latent_ds_val:.4f}]_[G/latent_cyc - {model.G_latent_cyc_val:.4f}]_[G/ref_adv - {model.G_ref_adv_val:.4f}]_[G/ref_sty - {model.G_ref_sty_val:.4f}]_[G/ref_ds - {model.G_ref_ds_val:.4f}]_[G/ref_cyc - {model.G_ref_cyc_val:.4f}]_[D/sum - {loss_D_meter.avg:.4f}]_[G/sum - {loss_G_meter.avg:.4f}]"
+                msg = f"[Train]_[iter - {cur_iter}/{args.total_iter}]_[Time - {time.time() - start_time:.2f}s]_[D/latent_real - {model.D_latent_real_val:.4f}]_[D/latent_fake - {model.D_latent_gene_val:.4f}]_[D/latent_reg - {model.D_latent_reg_val:.4f}]_[D/ref_real - {model.D_ref_real_val:.4f}]_[D/ref_fake - {model.D_ref_gene_val:.4f}]_[D/ref_reg - {model.D_ref_ref_val:.4f}]_[G/latent_adv - {model.G_latent_adv_val:.4f}]_[G/latent_sty - {model.G_latent_sty_val:.4f}]_[G/latent_ds - {model.G_latent_ds_val:.4f}]_[G/latent_cyc - {model.G_latent_cyc_val:.4f}]_[G/ref_adv - {model.G_ref_adv_val:.4f}]_[G/ref_sty - {model.G_ref_sty_val:.4f}]_[G/ref_ds - {model.G_ref_ds_val:.4f}]_[G/ref_cyc - {model.G_ref_cyc_val:.4f}]_[D/sum - {loss_D_meter.avg:.4f}]_[G/sum - {loss_G_meter.avg:.4f}]"
                 # msg = f"[Train]_[iter - {cur_iter}/{args.total_iter}]_[loss D - {loss_D_meter.avg:.4f}]_[loss G - {loss_G_meter.avg:.4f}]_[lambda ds - {args.lambda_ds:.4f}]"
                 logger.write(msg)
                 logger.write("="*30)
@@ -165,6 +168,6 @@ if __name__ == "__main__":
     if args.use_DDP:
         torch.cuda.set_device(args.local_rank)
         dist.init_process_group(backend="nccl")
-
+    cudnn.benchmark = True
     main_worker(args, logger)
 
