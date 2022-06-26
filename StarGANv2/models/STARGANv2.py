@@ -12,7 +12,7 @@ import torch.distributed as dist
 
 from .base_model import BaseModel, GANLoss, R1RegLoss, moving_average
 from .base_network import define_D, define_E, define_G, define_F, count_params
-class STARGANv2(BaseModel):
+class StarGANv2(BaseModel):
     def __init__(self, args):
         self.args = args
         self.D = define_D(args).cuda(args.local_rank)
@@ -188,6 +188,11 @@ class STARGANv2(BaseModel):
         self.D.load_state_dict(load_state_dict["D"])
         self.E.load_state_dict(load_state_dict["E"])
         self.F.load_state_dict(load_state_dict["F"])
+    def load(self, load_path):
+        state_dict = torch.load(load_path)
+        self.G_ema.load_state_dict(state_dict["G_ema"])
+        self.E_ema.load_state_dict(state_dict["E_ema"])
+        self.F_ema.load_state_dict(state_dict["F_ema"])
     def save(self, save_path):
         state_dict = {}
         if self.args.use_DDP:
@@ -282,7 +287,7 @@ class STARGANv2(BaseModel):
             for src_idx, src_domain in enumerate(src_domains):
                 src_data_dir = opj(self.args.data_root_dir, self.args.data_name, "val", src_domain)
                 src_loader = get_single_dataloader(data_dir=src_data_dir, img_size=self.args.img_size, batch_size=self.args.batch_size, imagenet_normalize=False)
-                task = f"{src_domain}_to_{ref_domain}"
+                task = f"{src_domain}_to_{ref_domain}_{mode}"
                 print(f"Evaluating LPIPS on {task}....")
                 save_dir = opj(self.args.eval_save_dir, task)
                 shutil.rmtree(save_dir, ignore_errors=True)
@@ -305,6 +310,8 @@ class STARGANv2(BaseModel):
                             except:
                                 iter_ref = iter(ref_loader)
                                 real_B = next(iter_ref)["img"].cuda(self.args.local_rank)
+                            if real_B.shape[0] > BS:
+                                real_B = real_B[:BS]
                             style_B = self.E_ema(real_B, label_B)
                         gene_B = self.G_ema(real_A, style_B)
                         group_gene_imgs.append(gene_B)
@@ -314,7 +321,7 @@ class STARGANv2(BaseModel):
                             cv2.imwrite(to_path, gene_B_img[:,:,::-1])
                     tmp_lpips_val = calculate_lpips_given_images(group_gene_imgs, local_rank=self.args.local_rank)
                     lpips_val_lst.append(tmp_lpips_val)
-                    break
+                    
                 lpips_val = np.array(lpips_val_lst).mean()
                 lpips_dict[task] = lpips_val
 
@@ -334,7 +341,7 @@ class STARGANv2(BaseModel):
         for ref_domain in domain_names:
             src_domains = [x for x in domain_names if x != ref_domain]
             for src_domain in src_domains:
-                task = f"{src_domain}_to_{ref_domain}"
+                task = f"{src_domain}_to_{ref_domain}_{mode}"
                 print(f"Evaluating FID on {task}....")
                 real_dir = opj(self.args.data_root_dir, self.args.data_name, "train", ref_domain)
                 gene_dir = opj(self.args.eval_save_dir, task)

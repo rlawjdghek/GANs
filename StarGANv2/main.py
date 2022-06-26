@@ -12,7 +12,7 @@ from torch.backends import cudnn
 
 from utils.util import *
 from datasets.dataloader import get_dataloader
-from models.STARGANv2 import STARGANv2
+from models.StarGANv2 import StarGANv2
 def build_args(is_test=False):
     parser = argparse.ArgumentParser()
 
@@ -79,7 +79,7 @@ def build_args(is_test=False):
     if not args.no_save:
         os.makedirs(args.img_save_dir, exist_ok=True)
         os.makedirs(args.model_save_dir, exist_ok=True)
-        os.makedirs(args.eval_save_dir, exist_ok=True)
+    os.makedirs(args.eval_save_dir, exist_ok=True)
     return args
 
 def main_worker(args, logger):
@@ -88,7 +88,7 @@ def main_worker(args, logger):
     logger.write(f"1 epochs : {len(src_loader)} iters")
     args.epoch_iter = len(src_loader)
     args.n_epochs = int(args.total_iter // len(src_loader)) + 1
-    model = STARGANv2(args)
+    model = StarGANv2(args)
     model.print_n_params(logger)
     cur_iter = 1
     start_time = time.time()

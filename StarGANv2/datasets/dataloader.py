@@ -28,7 +28,7 @@ def get_dataloader(args):
     src_loader = DataLoader(src_dataset, batch_size=args.batch_size, shuffle=shuffle, num_workers=args.n_workers, pin_memory=True, sampler=src_sampler, drop_last=True)
     ref_loader = DataLoader(ref_dataset, batch_size=args.batch_size, shuffle=shuffle, num_workers=args.n_workers, pin_memory=True, sampler=ref_sampler, drop_last=True)
     return src_loader, ref_loader
-def get_single_dataloader(data_dir, img_size, batch_size, imagenet_normalize=True):
+def get_single_dataloader(data_dir, img_size, batch_size, imagenet_normalize=True, drop_last=False):
     if imagenet_normalize:
         H = 299
         W = 299
@@ -46,5 +46,5 @@ def get_single_dataloader(data_dir, img_size, batch_size, imagenet_normalize=Tru
         T.Normalize(mean, std)
     ])
     dataset = SingleDataset(data_dir=data_dir, transform=transform)
-    loader = DataLoader(dataset, batch_size=batch_size, shuffle=True, num_workers=4, pin_memory=True)
+    loader = DataLoader(dataset, batch_size=batch_size, shuffle=True, num_workers=4, pin_memory=True, drop_last=drop_last)
     return loader

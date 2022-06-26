@@ -70,7 +70,26 @@ def calculate_lpips_given_images(group_of_images, local_rank=0):
             lpips_values.append(lpips(group_of_images[i], group_of_images[j]))
     lpips_val = torch.mean(torch.stack(lpips_values, dim=0))
     return lpips_val.item()
-        
+
+if __name__=="__main__":
+    import cv2
+    import torch
+    import torchvision.transforms as T
+    from glob import glob
+    paths = glob("/media/data1/jeonghokim/GANs/StarGANv2/20220624/eval_save_images/cat_to_dog/*")
+    print(len(paths))
+    imgs = []
+    transform = T.Compose([
+        T.ToPILImage(),
+        T.ToTensor(),
+        T.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))
+    ])
+    for path in paths:
+        img = cv2.cvtColor(cv2.imread(path), cv2.COLOR_BGR2RGB)
+        img = transform(img).cuda()
+        imgs.append(img)
+    print(calculate_lpips_given_images(imgs))
+
     
     
 

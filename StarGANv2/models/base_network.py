@@ -1,6 +1,26 @@
 import torch.nn as nn
 from torch.nn import init
 
+# def define_D(args):
+#     from .networks_official import Discriminator
+#     D = Discriminator(num_domains=3)
+#     D.apply(he_init)
+#     return D
+# def define_G(args):
+#     from .networks_official import Generator
+#     G = Generator(w_hpf=0)
+#     G.apply(he_init)
+#     return G
+# def define_F(args):
+#     from .networks_official import MappingNetwork
+#     F = MappingNetwork(num_domains=3)
+#     F.apply(he_init)
+#     return F
+# def define_E(args):
+#     from .networks_official import StyleEncoder
+#     E = StyleEncoder(num_domains=3)
+#     E.apply(he_init)
+#     return E
 def define_D(args):
     from .networks import Discriminator
     D = Discriminator(args.in_ch, args.img_size, args.n_domains, max_ndf=args.max_ndf)
