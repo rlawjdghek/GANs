@@ -1,7 +1,7 @@
 import os
 from os.path import join as opj
 import argparse
-from datetime import datetime
+import datetime
 import time 
 
 import numpy as np
@@ -52,7 +52,7 @@ def build_args(is_test=False):
     #### save ####
     parser.add_argument("--no_save", type=bool, default=False)
     parser.add_argument("--save_root_dir", type=str, default="/media/data1/jeonghokim/GANs/StarGANv2")
-    parser.add_argument("--save_name", type=str, default=f"{datetime.now().strftime('%Y%m%d')}")
+    parser.add_argument("--save_name", type=str, default=f"{datetime.datetime.now().strftime('%Y%m%d')}")
     parser.add_argument("--log_save_iter_freq", type=int, default=10)
     parser.add_argument("--img_save_iter_freq", type=int, default=100)
     parser.add_argument("--model_save_iter_freq", type=int, default=5000)
@@ -121,7 +121,8 @@ def main_worker(args, logger):
                 args.lambda_ds -= (args.initial_lambda_ds / args.ds_iter)
 
             if cur_iter % args.log_save_iter_freq == 0:
-                msg = f"[Train]_[iter - {cur_iter}/{args.total_iter}]_[Time - {time.time() - start_time:.2f}s]_[D/latent_real - {model.D_latent_real_val:.4f}]_[D/latent_fake - {model.D_latent_gene_val:.4f}]_[D/latent_reg - {model.D_latent_reg_val:.4f}]_[D/ref_real - {model.D_ref_real_val:.4f}]_[D/ref_fake - {model.D_ref_gene_val:.4f}]_[D/ref_reg - {model.D_ref_ref_val:.4f}]_[G/latent_adv - {model.G_latent_adv_val:.4f}]_[G/latent_sty - {model.G_latent_sty_val:.4f}]_[G/latent_ds - {model.G_latent_ds_val:.4f}]_[G/latent_cyc - {model.G_latent_cyc_val:.4f}]_[G/ref_adv - {model.G_ref_adv_val:.4f}]_[G/ref_sty - {model.G_ref_sty_val:.4f}]_[G/ref_ds - {model.G_ref_ds_val:.4f}]_[G/ref_cyc - {model.G_ref_cyc_val:.4f}]_[D/sum - {loss_D_meter.avg:.4f}]_[G/sum - {loss_G_meter.avg:.4f}]"
+                elapsed_time = str(datetime.timedelta(seconds=time.time() - start_time))[:-7]
+                msg = f"[Train]__[Elapsed Time - {elapsed_time}]_[iter - {cur_iter}/{args.total_iter}]_[D/latent_real - {model.D_latent_real_val:.4f}]_[D/latent_fake - {model.D_latent_gene_val:.4f}]_[D/latent_reg - {model.D_latent_reg_val:.4f}]_[D/ref_real - {model.D_ref_real_val:.4f}]_[D/ref_fake - {model.D_ref_gene_val:.4f}]_[D/ref_reg - {model.D_ref_ref_val:.4f}]_[G/latent_adv - {model.G_latent_adv_val:.4f}]_[G/latent_sty - {model.G_latent_sty_val:.4f}]_[G/latent_ds - {model.G_latent_ds_val:.4f}]_[G/latent_cyc - {model.G_latent_cyc_val:.4f}]_[G/ref_adv - {model.G_ref_adv_val:.4f}]_[G/ref_sty - {model.G_ref_sty_val:.4f}]_[G/ref_ds - {model.G_ref_ds_val:.4f}]_[G/ref_cyc - {model.G_ref_cyc_val:.4f}]_[D/sum - {loss_D_meter.avg:.4f}]_[G/sum - {loss_G_meter.avg:.4f}]"
                 # msg = f"[Train]_[iter - {cur_iter}/{args.total_iter}]_[loss D - {loss_D_meter.avg:.4f}]_[loss G - {loss_G_meter.avg:.4f}]_[lambda ds - {args.lambda_ds:.4f}]"
                 logger.write(msg)
                 logger.write("="*30)
@@ -167,7 +168,7 @@ if __name__ == "__main__":
     print_args(args, logger)
     if args.use_DDP:
         torch.cuda.set_device(args.local_rank)
-        dist.init_process_group(backend="nccl")
+        dist.init_process_group(backend="nccl", timeout=datetime.timedelta(seconds=7200))
     cudnn.benchmark = True
     main_worker(args, logger)
 
